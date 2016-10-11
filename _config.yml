@@ -1,0 +1,90 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: John Paul Newman
+email:
+description: > # this means to ignore newlines until 'baseurl:'
+  Devops Engineer
+baseurl: '' # the subpath of your site, e.g. /blog
+
+exclude:
+  - 'Gemfile*'
+  - 'Makefile'
+
+url: 'http://127.0.0.1:4000' # the base hostname & protocol for your site
+twitter_username:
+github_username:  jpnewman
+
+encoding:     'utf-8'
+
+tag_title_prefix: ''
+tag_title_suffix: ''
+
+# Build settings
+gems:
+- jekyll-assets
+
+markdown: redcarpet
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
+
+highlighter: pygments
+
+markdown_ext: 'markdown,mkdown,mkdn,mkd,md'
+
+relative_permalinks: false
+
+paginate: 5
+
+tag_page_layout: tag_page
+tag_page_dir: tag
+tag_permalink_style: pretty
+
+category_dir: cat
+
+kramdown:
+  default_lang: php
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  input: GFM # GitHub Flavored Markdown
+  linenos: table
+  lineanchors: yes
+
+sass:
+  style: compressed
+
+  compress:
+    css: false # | true | default - development: false, production: true
+    js: false # | true | default - development: false, production: true
+  cache: false # | directory | default: .asset-cache
+  cdn: https://cdn.example.com
+  skip_baseurl_with_cdn: false
+  skip_prefix_with_cdn: false
+  prefix: "/assets"
+  autowrite: true
+  assets:
+    - "*.png"
+    - "bundle.css"
+  digest: false
+  sources:
+    - _assets/css
+    - _assets/images
+    - _assets/javascripts
+    - _assets/stylesheets
+    - _assets/fonts
+    - _assets/img
+    - _assets/js
+  features:
+    liquid: true # | false | default: false
+    automatic_img_size: true # | false | n(fixnum): 2,4,6,8 | default: true
+    automatic_img_alt : true # | false | default: true
