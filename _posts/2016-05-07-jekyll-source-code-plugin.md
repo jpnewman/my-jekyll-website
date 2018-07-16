@@ -5,16 +5,13 @@ tags:
 - Jekyll
 - Plugin
 source_code:
-  -
-    file: ../_plugins/source_code.rb
+  - file: ../_plugins/source_code.rb
     language: ruby
     title: source_code.rb
-  -
-    file: ../_plugins/generate_source_code.rb
+  - file: ../_plugins/generate_source_code.rb
     language: ruby
     title: generate_source_code.rb
-  -
-    file: ../_plugins/redcarpet-custom.rb
+  - file: ../_plugins/redcarpet-custom.rb
     language: ruby
     title: redcarpet-custom.rb
 ---
@@ -26,16 +23,13 @@ I created the following Jekyll plugins to add support for code blocks with downl
 Place the file in a "_code" post relative folder and the following in the post Front Matter.
 
 ~~~
--
-  file: ../_code/source_code.rb
+- file: ../_code/source_code.rb
   language: ruby
   title: source_code.rb
--
-  file: ../_code/generate_source_code.rb
+- file: ../_code/generate_source_code.rb
   language: ruby
   title: generate_source_code.rb
--
-  file: ../_code/redcarpet-custom.rb
+- file: ../_code/redcarpet-custom.rb
   language: ruby
   title: redcarpet-custom.rb
 ~~~

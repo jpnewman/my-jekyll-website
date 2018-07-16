@@ -12,6 +12,10 @@ description: > # this means to ignore newlines until 'baseurl:'
   Devops Engineer
 baseurl: '' # the subpath of your site, e.g. /blog
 
+include:
+  - '.htaccess'
+  - '*.md'
+
 exclude:
   - 'Gemfile*'
   - 'Makefile'
@@ -26,7 +30,7 @@ tag_title_prefix: ''
 tag_title_suffix: ''
 
 # Build settings
-gems:
+plugins:
 - jekyll-assets
 
 markdown: redcarpet
@@ -39,7 +43,24 @@ markdown_ext: 'markdown,mkdown,mkdn,mkd,md'
 
 relative_permalinks: false
 
-paginate: 5
+pagination:
+  enabled: true
+  debug: false
+  collection: 'posts'
+  per_page: 5
+  permalink: '/page/:num/'
+  title: ':title - page :num'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+  category: 'posts'
+  tag: ''
+  locale: ''
+  trail:
+    before: 2
+    after: 2
+  extension: html
+  indexpage: 'index'
 
 tag_page_layout: tag_page
 tag_page_dir: tag
@@ -84,7 +105,38 @@ sass:
     - _assets/fonts
     - _assets/img
     - _assets/js
+    - _assets/photos
   features:
     liquid: true # | false | default: false
     automatic_img_size: true # | false | n(fixnum): 2,4,6,8 | default: true
     automatic_img_alt : true # | false | default: true
+
+# Jekyll-Photo-Gallery Settings
+exiftag:
+ sources:
+   - images/photography/dublin
+   - images/photography/london
+   - images/photography/munich
+
+photo_gallery:
+  auto_discovery: true
+
+# MiniMagick
+# https://github.com/zroger/jekyll-minimagick
+mini_magick:
+    photography_dublin:
+        source: images/photography/dublin
+        destination: images/photography/dublin/thumbnails
+        resize: "1280x720"
+    photography_london:
+        source: images/photography/london
+        destination: images/photography/london/thumbnails
+        resize: "1280x720"
+    photography_munich:
+        source: images/photography/munich
+        destination: images/photography/munich/thumbnails
+        resize: "1280x720"
+    headers:
+        source: images/headers
+        destination: images/headers/thumbnails
+        resize: "400x250"

@@ -7,14 +7,23 @@ weight: 6
 ---
 
 # Summary
-Use Chef to automate Windows and Linux boxes in AWS and VMware in a PCI DSS level 3 compliant company. Implemented High Availability (HA) and Disaster Recovery (DR) SOA architecture.
-Created a DSL in PowerShell for NuGet packing of a Microsoft solution file and Ruby DSL for packaging.
 
-- Active Directory
-- Windows MSMQ and SQL clustering
-- MSMQ and DTC
+## DevOps
 
-Lead Internationalization Engineer with over 14 years Internationalization (i18n) and localization (l10n) experience working on flagship projects, such as Bejeweled, Plants vs. Zombies, Peggle and Zuma in both client facing and internal roles within various industries. Liaised with global teams to deliver projects in multiple languages within tight deadlines and to a high standard. Acted as subject matter expert, point of contact and/or project manager as required. Designed and developed automation processes to reduce project delivery times, cost and resources.
+DevOps Engineer with over 5 years experience working with Windows and Linux on both AWS and VMware.
+
+Built and managed CI / CD tools and processes.
+
+## Software Engineer
+
+Created tools to support development teams in Python and C#.
+Created a Data pipeline in Python using AWS Lambda, Kinesis, and Glue.
+
+## Internationalization Engineer
+
+Lead Internationalization Engineer with over 14 years Internationalization (i18n) and localization (l10n) experience working on flagship projects, such as Bejeweled, Plants vs. Zombies, Peggle and Zuma in both client facing and internal roles within various industries. 
+
+Liaised with global teams to deliver projects in multiple languages within tight deadlines and to a high standard. Acted as subject matter expert, point of contact and/or project manager as required. Designed and developed automation processes to reduce project delivery times, costs and resources.
 
 # Work Experience
 
@@ -23,15 +32,15 @@ Lead Internationalization Engineer with over 14 years Internationalization (i18n
 ### DevOps / Senior Software Engineer
 
 #### Responsibilities:
-- Implemetation and maintaince of Amazon Web Services (AWS) infrastructure, including 200 instances
-- Implemetation and maintaince of all CI / CD systems
-- Jenkins, Artifactory, Gerrit, Octopus Deploy
-- Scrum Master
-- Team Lead
+- Implemetation and maintaince of Amazon Web Services (AWS) infrastructure, including 200 instances.
+- Implemetation and maintaince of all CI / CD systems.
+- Jenkins, Artifactory, Gerrit, Octopus Deploy.
+- Scrum Master.
+- Team Lead.
 
 #### Key Achievements:
 - Created a process to deploy a legacy VB6 application using Chef, Powershell, and AWS S3.
-- Created Ansible roles to deploy an ELK stack, and Artifactory, Gerrit, Jenkins servers.
+- Created Ansible roles to deploy an ELK / Elastic stack, and Artifactory, Gerrit, Jenkins servers.
 - Developed and maintained Chef Cookbooks for Continuous Integration (CI) servers.
 - Developed a RESTful Reporting Service using C#, Entity Framework (EF) and the Repository Pattern. With a JQuery and d3.js frontend.
 - Created Powershell build and deploy scripts to replace, Ruby Rake and MSBuild scripts.
@@ -39,6 +48,8 @@ Lead Internationalization Engineer with over 14 years Internationalization (i18n
 - Maintained Ruby and MSBuild scripts.
 - Developed a Ruby application that created a Graphviz DOT graph of Microsoft Visual Studio ```*.sln```, ```*.csproj```, ```*.dbproj``` dependencies and displayed in via a JQuery website that allowed node selection and filtering.
 - Introduced the use of NuGet for dependencies management and deployment.
+- Used HashiCorp Terraform to deploy AWS and VMware architecture.
+- Used HashiCorp Packer to create custom AWS AMI and VMware templates.
 
 ## PopCap Games International : 2007 — 2012
 

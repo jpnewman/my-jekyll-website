@@ -2,7 +2,7 @@
 
 require "jekyll-assets"
 
-class Jekyll::ImagePath < Jekyll::Assets::Liquid::Tag
+class Jekyll::ImagePath < Liquid::Tag
 
   def initialize(tag, args, tokens)
     super("img", args, tokens)

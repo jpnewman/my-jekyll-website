@@ -7,20 +7,16 @@ tags:
 - Active Directory
 - LDAP
 source_code:
-  -
-    file: _code/check-users-requests/CheckUsersRequests.sh
+  - file: _code/check-users-requests/CheckUsersRequests.sh
     language: bash
     title: CheckUsersRequests.sh
-  -
-    file: _code/check-users-requests/logstash/logstash.conf
+  - file: _code/check-users-requests/logstash/logstash.conf
     language: ruby
     title: logstash/logstash.conf
-  -
-    file: _code/check-users-requests/FormatLogs.sh
+  - file: _code/check-users-requests/FormatLogs.sh
     language: bash
     title: FormatLogs.sh
-  -
-    file: _code/check-users-requests/CreateExcelDoc.ps1
+  - file: _code/check-users-requests/CreateExcelDoc.ps1
     language: powershell
     title: CreateExcelDoc.ps1
 ---

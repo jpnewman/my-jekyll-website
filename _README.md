@@ -31,6 +31,12 @@ bundle install --path vendor/bundle
 bundle exec jekyll serve
 ~~~
 
+# Serve Blog, watch
+
+~~~
+bundle exec jekyll serve --watch
+~~~
+
 ## Run without generating
 
 ~~~
@@ -44,6 +50,18 @@ python -m SimpleHTTPServer 4000
 
 ~~~
 bundle exec jekyll build
+~~~
+
+# Build, debug logging
+
+~~~
+JEKYLL_LOG_LEVEL=debug bundle exec jekyll build
+~~~
+
+# Build, debug and trace
+
+~~~
+JEKYLL_LOG_LEVEL=debug bundle exec jekyll build --trace
 ~~~
 
 # Clean

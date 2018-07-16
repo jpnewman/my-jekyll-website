@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Photos
-permalink: /photos/
+permalink: /photography/
 add_to_narbar: 'true'
 weight: 5
 ---

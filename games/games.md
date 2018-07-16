@@ -7,7 +7,7 @@ weight: 4
 ---
 
 # Games
-Below is a list of games I've worked on why at PopCap: -
+Some of the games I worked on while at PopCap include: -
 
 
 |||

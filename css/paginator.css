@@ -1,0 +1,15 @@
+ul.pager {
+    text-align: center;
+    list-style: none;
+}
+
+ul.pager li {
+    display: inline;
+    text-align: center;
+    padding: 5px;
+    margin: 0px;
+}
+
+.selected {
+    background-color: #2a7ae2;
+}

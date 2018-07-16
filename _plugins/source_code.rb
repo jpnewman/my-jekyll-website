@@ -1,40 +1,44 @@
 # John Paul Newman
-# TODO: Implement
 
 module Jekyll
   class SourceCode < Liquid::Tag
     include Jekyll::Converters::Markdown::RedcarpetParser::WithPygments
     safe = true
 
-    def initialize(name, file_filter=nil, tokens=nil)
+    def initialize(name, file_filter = nil, tokens = nil)
       super
       @file_filter = file_filter.strip
     end
 
     def render(context)
-        unless context.registers[:page].has_key?('source_code')
-          #raise 'Please include source_code in frontmatter'
-          return
+      unless context.registers[:page].key?('source_code')
+        raise 'Please include source_code in frontmatter'
+      end
+
+      page_path = context.registers[:page].path
+      page_path = page_path[0..-9] if page_path =~ %r{\/#excerpt$}
+      post_path = File.dirname(page_path)
+
+      html = ''
+
+      context.registers[:page]['source_code'].each do |sc|
+        unless @file_filter.nil? || @file_filter.empty?
+          next unless @file_filter.casecmp(sc['file'])
         end
 
-        post_path = File.dirname(context.registers[:page].path)
+        file_path = File.join(post_path, sc['file'])
 
-        html = ''
+        Jekyll.logger.debug 'SourceCode: path', context.registers[:page].path
+        Jekyll.logger.debug 'SourceCode: post_path', post_path
+        Jekyll.logger.debug 'SourceCode: file_path', file_path
 
-        context.registers[:page]['source_code'].each do |sc|
-          unless @file_filter.nil? || @file_filter.empty?
-            next unless @file_filter.downcase == sc['file'].downcase
-          end
+        text = File.open(file_path).read
+        html << block_code(text, sc['language'], sc['file'])
+      end
 
-          file_path = File.join(post_path, sc['file'])
-          text = File.open(file_path).read
-          html << block_code(text, sc['language'], sc['file'])
-        end
-
-        html
+      html
     end
   end
-
 end
 
 Liquid::Template.register_tag('source_code', Jekyll::SourceCode)

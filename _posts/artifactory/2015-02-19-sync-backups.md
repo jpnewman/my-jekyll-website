@@ -5,12 +5,10 @@ tags:
 - Artifactory
 - Backup
 source_code:
-  -
-    file: _code/sync_backups/s3_sync_artifactory_configs.cfg
+  - file: _code/sync_backups/s3_sync_artifactory_configs.cfg
     language: ini
     title: s3_sync_artifactory_configs.cfg
-  -
-    file: _code/sync_backups/s3_sync_artifactory_configs.py
+  - file: _code/sync_backups/s3_sync_artifactory_configs.py
     language: python
     title: s3_sync_artifactory_configs.py
 ---

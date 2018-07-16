@@ -4,8 +4,7 @@ title: Check Artifactory Services
 tags:
 - Artifactory
 source_code:
-  -
-    file: _code/check-artifactory-services.sh
+  - file: _code/check-artifactory-services.sh
     language: bash
     title: check-artifactory-services.sh
 ---
