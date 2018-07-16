@@ -20,7 +20,7 @@ exclude:
   - 'Gemfile*'
   - 'Makefile'
 
-url: 'http://127.0.0.1:4000' # the base hostname & protocol for your site
+url: 'http://johnpaulnewman.com' # the base hostname & protocol for your site
 twitter_username:
 github_username:  jpnewman
 
@@ -88,7 +88,7 @@ sass:
     css: false # | true | default - development: false, production: true
     js: false # | true | default - development: false, production: true
   cache: false # | directory | default: .asset-cache
-  cdn: https://cdn.example.com
+  # cdn: https://cdn.example.com
   skip_baseurl_with_cdn: false
   skip_prefix_with_cdn: false
   prefix: "/assets"

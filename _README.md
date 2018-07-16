@@ -64,6 +64,12 @@ JEKYLL_LOG_LEVEL=debug bundle exec jekyll build
 JEKYLL_LOG_LEVEL=debug bundle exec jekyll build --trace
 ~~~
 
+# Build, PROD
+
+~~~
+JEKYLL_ENV=prod bundle exec jekyll build
+~~~
+
 # Clean
 
 ~~~
