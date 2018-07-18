@@ -1,4 +1,5 @@
 # John Paul Newman
+# Based On: http://manidesto.github.io/better-code-blocks-in-jekyll
 
 module Jekyll
   module Converters
