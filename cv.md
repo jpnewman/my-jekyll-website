@@ -6,6 +6,10 @@ add_to_navbar: 'true'
 weight: 6
 ---
 
+<div style="float: right">
+<a href="{{ '/johnpaul_newman_cv.pdf' | absolute_url }}" target="_blank">PDF</a>
+</div>
+
 # Summary
 
 ## DevOps
@@ -27,11 +31,11 @@ Liaised with global teams to deliver projects in multiple languages within tight
 
 # Work Experience
 
-Working as part of a small platform engineering team that support DevOps practices through the implementation and creation of CI / CD tools and infrastructure.
-
 ## Wonga : 2012 — Present (Ireland / UK)
 
 ### DevOps / Senior Software Engineer
+
+Working as part of a small platform engineering team that support DevOps practices through the implementation and creation of CI / CD tools and infrastructure.
 
 #### Responsibilities:
 
@@ -40,7 +44,7 @@ Working as part of a small platform engineering team that support DevOps practic
 - Drive CI / CD best practices.
 - Create Ansible playbooks for CI / CD servers.
 - Create HashiCorp Terraform templates to deploy AWS and VMware architecture.
-- Create HashiCorp Packer templates to create custom AWS AMI and VMware templates.
+- Create HashiCorp Packer templates for AWS and VMware.
 - Support SOA architecture applications that use NServiceBus using both MSMQ, with DTC, and RabbitMQ as a transportation layer.
 - Interim Scrum Master, during the transitions.
 - Interim Team Lead, of 3 people.
@@ -153,17 +157,18 @@ Worked in a dual role as the only localization engineer and network administrato
 ||||
 |---|---|---|
 |**Provisioning Tools**|**CI / CD Tools**|**Monitoring Tools / Logging Tools**|
-|- OpsCode Chef<br />- AWS Cloud​Formation<br />- HasiCorp Ansible<br /> - HasiCorp Terraform<br /> - HasiCorp Packer|- Jenkins<br />- Artifactory<br />- Octopus Deploy|- New Relic<br /><br />- Splunk<br />- ELK / Elastic stack|
+|- OpsCode Chef<br />- AWS Cloud​Formation<br />- Ansible, HasiCorp Terraform
+and Packer|- Jenkins<br />- Artifactory<br />- Octopus Deploy|- New Relic<br /><br />- Splunk<br />- ELK / Elastic stack|
 |**Platforms**|**Development Tools**|**SCM Tools**|
 |- AWS<br />- Microsoft Windows<br />- Linux / Ubuntu<br />- Mac OS X<br />- iOS and Android<br />- Xbox 360 and PS3|- Microsoft Visual Studio<br />- Xcode<br />- Eclipse<br />- FlashDevelop<br />- Microsoft SQL|- GIT<br />- Gerrit<br />- Perforce<br />- SVN|
 |**Defect Tracking Tools /<br />Collaboration Systems**|**Technologies**|**Development Languages**|
-|- JIRA<br /><br />- Confluence<br />- SharePoint|- NServiceBus<br />- Entity Framework<br />- Docker|- PowerShell (with DSC and Pester)<br />- Ruby<br />- Python<br />- C, C++ (with MFC, ATL, and COM)<br />- Objective-C<br />- C# (with ASP.Net and Core)<br />- GNU and NMake makefiles<br />- Bash Shell Script|
+|- JIRA<br /><br />- Confluence<br />- SharePoint|- NServiceBus<br />- Entity Framework<br />- Docker|- PowerShell (with DSC and Pester)<br />- Ruby<br />- Python<br />- C, C++ (with MFC, ATL, and COM)<br />- Objective-C<br />- C# (with ASP.Net and Core)<br />- Bash Shell Script|
 |**L10N Tools (Windows)**|**L10N Tools (Mac)**|||
 |- Trados 2007 Suite<br />- Alchemy CATALYST<br />- STAR Transit & TermStar|- AppleGlot<br />- PowerGlot||
 
 # Qualifications
 
-## Open University course in C++ Programming (MT262 Module) : 2003 — 2005
+## Open University C++ Programming (MT262 Module) : 2003 — 2005
 
 - Borland object-oriented programming, with C++, and Project Management
 
