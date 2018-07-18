@@ -2,7 +2,7 @@
 layout: page
 title: Contact
 permalink: /contact/
-add_to_narbar: 'true'
+add_to_navbar: 'true'
 weight: 7
 ---
 

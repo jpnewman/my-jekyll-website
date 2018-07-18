@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Check Artifactory Sync Backups
+categories: Tech
 tags:
 - Artifactory
 - Backup

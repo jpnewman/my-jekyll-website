@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Jekyll Source Code Plugin
+categories: Tech
 tags:
 - Jekyll
 - Plugin

@@ -1,6 +1,6 @@
 .PHONY: all install build serv clean
 
-all: serv
+all: serv_inc
 
 install:
 	sudo gem install bundler
@@ -11,11 +11,14 @@ install:
 build:
 	bundle exec jekyll build
 
+build_prod: clean
+	JEKYLL_ENV=prod bundle exec jekyll build
+
 serv:
 	bundle exec jekyll serve
 
 
-sev_inc:
+serv_inc:
 	bundle exec jekyll serve --incremental
 
 clean:

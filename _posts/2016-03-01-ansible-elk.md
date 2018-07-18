@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Ansible ELK
+categories: Tech
 tags:
 - Ansible
 - ELK

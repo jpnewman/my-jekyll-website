@@ -1,6 +1,7 @@
 ---
 layout: post
 title: HAProxy Disable Down Server
+categories: Tech
 tags:
 - Artifactory
 - HAProxy
