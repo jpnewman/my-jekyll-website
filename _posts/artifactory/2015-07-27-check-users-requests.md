@@ -7,7 +7,7 @@ tags:
 - Security
 - Active Directory
 - LDAP
-source_code:
+source_codes:
   - file: _code/check-users-requests/CheckUsersRequests.sh
     language: bash
     title: CheckUsersRequests.sh

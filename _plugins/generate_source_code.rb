@@ -40,9 +40,9 @@ module Jekyll
         url     = '/' + url unless url =~ %r{^\/}
         url     = url[0..-11] if url =~ %r{\/index.html$}
 
-        next unless post.populate_tags.key?('source_code')
+        next unless post.populate_tags.key?('source_code_file')
 
-        post.populate_tags['source_code'].each do |sc|
+        post.populate_tags['source_code_file'].each do |sc|
           file_name = File.basename(sc['file'])
           file_subfolder = File.dirname(sc['file'])
 

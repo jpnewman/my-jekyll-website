@@ -5,14 +5,14 @@ module Jekyll
     include Jekyll::Converters::Markdown::RedcarpetParser::WithPygments
     safe = true
 
-    def initialize(name, file_filter = nil, tokens = nil)
+    def initialize(tag_name, source_codes_file_filter, tokens = nil)
       super
-      @file_filter = file_filter.strip
+      @source_codes_file_filter = source_codes_file_filter.strip
     end
 
     def render(context)
-      unless context.registers[:page].key?('source_code')
-        raise 'Please include source_code in frontmatter'
+      unless context.registers[:page].key?('source_codes')
+        raise 'Please include source_codes in front matter'
       end
 
       page_path = context.registers[:page].path
@@ -21,11 +21,8 @@ module Jekyll
 
       html = ''
 
-      context.registers[:page]['source_code'].each do |sc|
-        unless @file_filter.nil? || @file_filter.empty?
-          next unless @file_filter.casecmp(sc['file'])
-        end
-
+      context.registers[:page]['source_codes'].each do |sc|
+        next unless @source_codes_file_filter.casecmp?(sc['file'])
         file_path = File.join(post_path, sc['file'])
 
         Jekyll.logger.debug 'SourceCode: path', context.registers[:page].path
@@ -33,7 +30,7 @@ module Jekyll
         Jekyll.logger.debug 'SourceCode: file_path', file_path
 
         text = File.open(file_path).read
-        html << block_code(text, sc['language'], sc['file'])
+        html = block_code(text, sc['language'], sc['file'], sc['title'])
       end
 
       html

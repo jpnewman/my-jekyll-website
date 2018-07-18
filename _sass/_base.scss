@@ -298,6 +298,15 @@ pre a:only-of-type::before {
     padding-left: 5px;
 }
 
+.code-block-header-left {
+    display: inline;
+}
+
+.code-block-header-right {
+    float: right;
+    margin-right: 5px;
+}
+
 
 /**
 * post-tags

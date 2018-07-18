@@ -5,7 +5,7 @@ categories: Tech
 tags:
 - Artifactory
 - Backup
-source_code:
+source_codes:
   - file: _code/sync_backups/s3_sync_artifactory_configs.cfg
     language: ini
     title: s3_sync_artifactory_configs.cfg

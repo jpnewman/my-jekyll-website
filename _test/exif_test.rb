@@ -1,9 +1,13 @@
 #!/usr/bin/env ruby
 
 require './test_helper'
+require 'exifr/jpeg'
+require 'exifr/tiff'
+include EXIFR
+
+EXIFR.logger = Logger.new(StringIO.new)
 
 class JPEGTest < TestCase
-
   def test_initialize
     images = { '../images/photography/munich/MUC2778.jpeg' => { 'model' => 'NIKON D7000',
                                                                 'time' => Time.new(2017, 12, 21, 13, 13, 35, '+00:00') },

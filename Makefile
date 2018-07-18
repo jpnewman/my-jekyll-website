@@ -1,4 +1,4 @@
-.PHONY: all install build serv clean
+.PHONY: all install build build_debug build_prod serv serv_inc clean
 
 all: serv_inc
 
@@ -10,6 +10,9 @@ install:
 
 build:
 	bundle exec jekyll build
+
+build_debug: clean
+	JEKYLL_LOG_LEVEL=debug bundle exec jekyll build --trace
 
 build_prod: clean
 	JEKYLL_ENV=prod bundle exec jekyll build
