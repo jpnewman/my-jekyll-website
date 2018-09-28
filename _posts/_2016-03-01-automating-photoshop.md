@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Automating Photoshop
-categories: Tech
+categories: tech
 tags:
 - Photoshop
 ---

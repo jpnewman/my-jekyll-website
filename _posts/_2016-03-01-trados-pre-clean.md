@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Trados pre-clean
-categories: Tech
+categories: tech
 tags:
 - Trados
 ---

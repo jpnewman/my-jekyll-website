@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Packer Windows
-categories: Tech
+categories: tech
 tags:
 - Packer
 ---

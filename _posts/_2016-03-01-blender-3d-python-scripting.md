@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Blender 3D Python scripting
-categories: Tech
+categories: tech
 tags:
 - Blender 3D
 ---

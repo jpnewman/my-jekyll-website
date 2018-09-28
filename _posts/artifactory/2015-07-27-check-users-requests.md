@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Artifactory Check Users Requests
-categories: Tech
+categories: tech
 tags:
 - Artifactory
 - Security

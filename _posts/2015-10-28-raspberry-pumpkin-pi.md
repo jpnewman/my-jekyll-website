@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Raspberry Pumpkin Pi
-categories: [Tech, Personal]
+categories: [tech, personal]
 tags:
 - Raspberry Pi
 ---

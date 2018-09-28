@@ -1,7 +1,7 @@
 ---
 layout: post
 title: XSLT functions with Javascript
-categories: Tech
+categories: tech
 tags:
 - XLST
 ---

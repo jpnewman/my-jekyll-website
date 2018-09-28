@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Check Artifactory Services
-categories: Tech
+categories: tech
 tags:
 - Artifactory
 source_codes:
