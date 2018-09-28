@@ -30,6 +30,10 @@ bundle install --path _vendor/bundle
 - [InkScape](_docs/inkscape)
 - [LaTex](_docs/latex)
 
+~~~
+make gen_docs
+~~~
+
 ## Serve Blog, generate pages
 
 ~~~
