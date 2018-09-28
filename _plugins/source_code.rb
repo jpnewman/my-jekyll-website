@@ -22,7 +22,8 @@ module Jekyll
       html = ''
 
       context.registers[:page]['source_codes'].each do |sc|
-        next unless @source_codes_file_filter.casecmp?(sc['file'])
+        next unless @source_codes_file_filter.casecmp(sc['file'])
+
         file_path = File.join(post_path, sc['file'])
 
         Jekyll.logger.debug 'SourceCode: path', context.registers[:page].path
