@@ -1,33 +1,33 @@
 
 # pandoc
 
-## Convert
+## Convert Markdown
 
-### html
+### To HTML
 
 ~~~
 pandoc -o cv.html -f markdown -t html -c pandoc.css ../../cv.md
 ~~~
 
-### docx
+### To DOCX
 
-#### Create style reference doc
+1. Create style reference doc
 
-~~~
-pandoc --print-default-data-file reference.docx > custom-style-reference.docx
-~~~
+    ~~~
+    pandoc --print-default-data-file reference.docx > custom-style-reference.docx
+    ~~~
 
-#### Edit style reference doc
+2. Edit style reference doc
 
-~~~
-open custom-style-reference.docx
-~~~
+    ~~~
+    open custom-style-reference.docx
+    ~~~
 
-> Add a space, delete the space and save.
+    > Add a space, delete the space and save.
 
-#### Create docx
+3. Create docx
 
-~~~
-pandoc -o cv.docx -f markdown -t docx ../../cv.md
-pandoc -o cv.docx -f markdown -t docx+styles --reference-doc custom-style-reference.docx ../../cv.md
-~~~
+    ~~~
+    pandoc -o cv.docx -f markdown -t docx ../../cv.md
+    pandoc -o cv.docx -f markdown -t docx+styles --reference-doc custom-style-reference.docx ../../cv.md
+    ~~~
