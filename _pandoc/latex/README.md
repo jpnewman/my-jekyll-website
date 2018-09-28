@@ -17,13 +17,21 @@ xelatex -halt-on-error johnpaul_newman_cv.tex
 cp johnpaul_newman_cv.pdf ../../johnpaul_newman_cv.pdf
 ~~~
 
+## Generate docx
+
+~~~
+pandoc -s johnpaul_newman_cv.tex -o johnpaul_newman_cv.docx
+~~~
+
+> Not working well!!!
+
 ## Generate HTML
 
 ~~~
 htxelatex johnpaul_newman_cv.tex
 ~~~
 
-> Not working well!
+> Not working well!!!
 
 ## PDF 2 HTML
 
