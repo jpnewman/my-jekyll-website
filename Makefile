@@ -2,11 +2,13 @@
 
 all: serv_inc
 
-install:
+init:
 	sudo gem install bundler
 	brew install ruby
 	brew install libxml2 libxslt libiconv
 	brew install ImageMagick
+
+	bundle install --path _vendor/bundle
 
 build:
 	bundle exec jekyll build

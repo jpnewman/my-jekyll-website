@@ -8,3 +8,5 @@ _site
 *.sublime-workspace
 
 thumbnails/
+
+_vendor/
