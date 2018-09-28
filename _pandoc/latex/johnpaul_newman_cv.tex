@@ -1,0 +1,243 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Twenty Seconds Resume/CV
+% LaTeX Template
+% Version 1.0 (14/7/16)
+%
+% Original author:
+% Carmine Spagnuolo (cspagnuolo@unisa.it) with major modifications by 
+% Vel (vel@LaTeXTemplates.com) and Harsh (harsh.gadgil@gmail.com)
+%
+% License:
+% The MIT License (see included LICENSE file)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[a4paper]{twentysecondcv} % a4paper for A4
+
+%%% Configure a directory location for sections
+\newcommand*{\sectiondir}{sections/}
+
+% Command for printing skill overview
+\newcommand\skills{
+\vspace{4mm}
+\includegraphics[scale=0.18]{DevOps.png}
+}
+
+% Programming skill bars
+\programming{{Ruby / 3.5}, {Powershell $\textbullet$ Bash / 5}, {C $\textbullet$ C++  $\textbullet$ Python / 5}, {C\# $\textbullet$ SQL $\textbullet$ Entity Framework / 5}}
+
+\oses{{Linux (Ubuntu) $\textbullet$ Mac OS X / 5}, {Windows / 5.5}}
+
+\platforms{{Xbox 360, PS3 / 3}, {iOS and Android / 4}, {VMWare / 4.5}, {AWS / 5}}
+
+% Projects text
+\projects{
+\textbf{Data Pipeline}
+\begin{itemize}
+	\item AWS Lambda (C\# \& Python)
+	\item AWS Kinesis
+	\item AWS Glue \& Athena
+	\item AWS EMR (Scala \& PySpark)
+	\item AVRO
+\end{itemize}
+\textbf{\href{https://github.com/jpnewman/papers}{OCR Solution - Hackathon : Winner}}
+\begin{itemize}
+	\item Python (Flask, Celery, RethinkDB)
+	\item RabbitMQ
+\end{itemize}
+\textbf{Reporting Service}
+\begin{itemize}
+	\item C\# (AutoMapper, Windsor, \\ Entity Framework)
+	\item JQuery \& d3.js
+\end{itemize}
+\textbf{Gerrit Backup Solution}
+\begin{itemize}
+	\item Python
+	\item AWS S3
+\end{itemize}
+\textbf{C\# Dependencies Graph}
+\begin{itemize}
+	\item Ruby
+	\item Graphviz \& SVG
+	\item JQuery
+\end{itemize}
+\textbf{Chef LWRP}
+\begin{itemize}
+	\item Chef \& Powershell
+\end{itemize}
+\textbf{Palm OS RSRC Extractor}
+\begin{itemize}
+	\item C++, MFC, COM
+\end{itemize}
+\textbf{Adobe Photoshop Automation}
+\begin{itemize}
+	\item Photoshop Scripting
+\end{itemize}
+\textbf{Translation Memory Validation}
+\begin{itemize}
+	\item Classic ASP
+	\item XSLT with Javascript functions
+\end{itemize}
+}
+
+\qualifications{
+\textbf{Open University C++ Programming \\ (MT262 Module)} \\
+\textbf{Microsoft Exchange Server 5.5}\\
+\textbf{Cambridge Information Technology \\ Certificate in Programming} \\
+Pascal and Delphi \\
+\textbf{BTEC 1st Diploma in Science \& Health} \\
+12 Distinctions and 4 Merits
+}
+
+%----------------------------------------------------------------------------------------
+%	 PERSONAL INFORMATION
+%----------------------------------------------------------------------------------------
+% If you don't need one or more of the below, just remove the content leaving the command, e.g. \cvnumberphone{}
+
+\cvname{
+	\textbf{JOHN PAUL}\\\textbf{NEWMAN}
+} % Your name
+\cvjobtitle{Senior Software Engineer \\ DevOps} % Job
+% title/career
+
+\cvlinkedin{/in/johnpaulnewman}
+\cvgithub{jpnewman}
+\cvnumberphone{} % Phone number
+\cvsite{johnpaulnewman.com} % Personal website
+\cvmail{} % Email address
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\hyphenpenalty 10000
+\exhyphenpenalty 10000
+
+\makeprofile % Print the sidebar
+
+%----------------------------------------------------------------------------------------
+%	 Summary
+%----------------------------------------------------------------------------------------
+
+\section{Summary}
+
+\summary{Windows and Linux engineer proficient in C/C++, C\#, Python, Powershell and Bash scripts. Working in Agile environments for a FinTech PCI DSS compliant business. \\
+Highly competent in Windows and Linux automation, using Chef and Ansible. Experience in infrastructure automation, using Packer and Terraform, on both AWS and VMware.}
+
+%----------------------------------------------------------------------------------------
+%	 EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\section{Work Experience}
+
+\begin{twenty} % Environment for a list with descriptions
+%\twentyitem{<date from>}{<date to>}{<title>}{<location>}{<description>}{<responsibilities>}{<key achievements>}
+\twentyitem
+    	{2012}% Date From
+	{Present} % Date To
+    {DevOps/Senior Software Engineer} % Title
+    {\href{https://www.wonga.com/}{Wonga}} % Location
+    {Working as part of a small platform engineering team that support DevOps practices through the implementation and creation of CI/CD tools and infrastructure.} % Description
+	{\begin{itemize}
+		\item Implementation and maintenance of Amazon Web Services (AWS) infrastructure, including 200+ EC2 instances and Active Directory servers
+		\item Implementation and maintenance of all CI/CD systems, including Jenkins, Artifactory, Gerrit, Octopus Deploy, and Windows build/deploy agents
+		\item Drive CI/CD best practices
+		\item Create Ansible playbooks for CI/CD servers
+		\item Create HashiCorp Terraform templates to deploy AWS and VMware architecture
+		\item Create HashiCorp Packer templates for AWS and VMware
+		\item Support SOA architecture applications that use NServiceBus using both MSMQ, with DTC, and RabbitMQ as a transportation layer
+		\item Interim Scrum Master, during the transitions
+		\item Interim Team Lead, of 3 people
+	\end{itemize}
+	} % Responsibilities
+	{\begin{itemize}
+		  \item Created Ansible roles to deploy an ELK/Elastic stack, Artifactory, Gerrit, and Jenkins servers
+		\item Created a Data pipeline in Python using AWS Lambda, Kinesis, and Glue.
+		\item Created a process to deploy a legacy VB6 application using Chef, Powershell, and AWS S3
+		\item Developed and maintained Chef Cookbooks for Continuous Integration (CI) servers
+		\item Developed a RESTful Reporting Service using C\#, Entity Framework (EF), JQuery and a d3.js frontend
+		\item Created Powershell build and deploy scripts to replace, Ruby Rake, and MSBuild scripts, which included a DSL implemented in PowerShell for NuGet packing
+		\item Developed a Ruby application that created a Graphviz DOT file of Microsoft Visual Studio solution dependencies, which was displayed via a JQuery website that allowed dependency selection and filtering
+		\item Introduced the use of NuGet, Artifactory, Octopus Deploy to manage dependencies and deployment packages
+	\end{itemize}
+	} % Key Achievements
+\end{twenty}
+
+\newpage
+\makeprofiletwo
+
+\section{Work Experience}
+\begin{twenty}
+\twentyitem
+    	{2007} % Date From
+	{2012} % Date To
+    {Software Internationalization Engineer II} % Title
+    {\href{https://www.popcap.com/}{PopCap Games International}} % Location
+    {Worked as one of two internationalization engineers responsible for source code changes to ensure games worked in multiple regions, including APAC.} % Description
+	{\begin{itemize}
+		\item Internationalization and localization of flagship games, across multiple platforms in multiple development languages, including C++ and Objective-C
+		\item Liaise with US and APAC project teams to achieve timely delivery and mutual project goals
+		\item Act as point of contact/subject matter expert for project Internationalization matters
+	\end{itemize}
+	} % Responsibilities
+	{\begin{itemize}
+		\item Managed multiple key projects simultaneously – liaising with multiple project stakeholders in the US and APAC
+		\item Developed numerous Python, JavaScript, and VBA tools to reduce engineering time and resources
+		\item Reduced art resource requirements by automating Adobe Photoshop to create Asian language Bitmap Fonts
+		\item Created a script to import/export text from Photoshop files, allowing for faster translation of graphical assets
+		\item Consistently took the initiative to scope and analyze new technology requirements and project impacts
+	\end{itemize}
+	} % Key Achievements
+
+\end{twenty}
+
+\begin{twenty}
+\twentyitem
+    	{2002} % Date From
+	{2007} % Date To
+    {Software Internationalization and Build Engineer} % Title
+    {\href{https://www.welocalize.com/}{Welocalize/Connect Global Solutions}} % Location
+    {Worked as lead engineer on various projects, responsible for projects and team members.} % Description
+	{}
+	{\begin{itemize}
+		\item Received client recognition for designing, developing and implementing an online system in Classic ASP that validated Translation Memories (TMs) and ensured higher leverage, reducing future project costs
+		\item Created extensive GNU and NMake makefiles
+		\item Developed a tool in C++ to extract text from the Palm OS RSRC file format, enabling shorter localization cycles
+	 \end{itemize}
+	}
+\end{twenty}
+
+\begin{twenty}
+\twentyitem
+	{2000}
+	{2002}
+    {Software Localization Engineer}
+    {\href{https://www.lionbridge.com/}{Bowne Global Solutions}}
+    {}
+    {}
+    {\begin{itemize}
+		\item Developed comprehensive functional test scripts for cutting edge mobile device, Handspring VisorPhone
+	 \end{itemize}
+    }
+\end{twenty}
+
+\begin{twenty}
+\twentyitem
+	{1998}
+	{2000}
+    {Software Localization Engineer \& IT Network Administrator}
+    {Tek Translation}
+    {}
+    {}
+    {\begin{itemize}
+		\item Migrated Novell to Windows NT 4 and Pegasus Mail to Exchange Server
+		\item Set-up and maintained Sage Line 100, MS-DOS based, accounting system
+	 \end{itemize}
+    }
+\end{twenty}
+
+\end{document} 
