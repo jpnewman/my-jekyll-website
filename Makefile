@@ -30,6 +30,9 @@ build_debug: clean gen_docs
 build_prod: clean gen_docs
 	JEKYLL_ENV=prod bundle exec jekyll build
 
+prod_upload: build_prod
+	aws s3 sync _site s3://johnpaulnewman.com --profile mysite
+
 serv:
 	bundle exec jekyll serve
 
