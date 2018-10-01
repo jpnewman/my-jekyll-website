@@ -283,16 +283,17 @@
 
         %------------------------------------------------
 
-        \vspace{3mm}
-
+    \vspace{7.5mm}
     {\large \textbf{Programming Languages}}
 
     \programming
 
+    \vspace{5.5mm}
     {\large \textbf{Operating Systems}}
 
     \oses
 
+    \vspace{5.5mm}
     {\large \textbf{Platforms}}
 
     \platforms
@@ -317,6 +318,7 @@
 
     \projects
 
+    \vspace{8.5mm}
     \profilesection{Qualifications}{14mm}
 
     \qualifications
@@ -381,26 +383,15 @@
 	\end{tabular*}
 }
 
-% \newcommand{\twentyitem}[7]{%
-% 	#1&\parbox[t]{0.83\textwidth}{%
-% 		\large \textbf{#3}%
-% 		\hfill%
-% 		{\footnotesize#4}%
-%         }\\
-%     #2&\parbox[t]{0.83\textwidth}{
-%     \ifblank{#5}{}{#5 \\}%
-%     \ifblank{#6}{}{\textbf{Responsibilities}{#6}}%
-%     \ifblank{#7}{}{\textbf{Key Achievements}{#7}}%
-% 	}\\
-% }
-
 \newcommand{\twentyitem}[7]{%
   \parbox[t]{0.98\textwidth}{%
-		\large \textbf{#3} \\%
-		{\textbf{\normalsize #4 (#1 - #2)}} \\%
-    \ifblank{#5}{}{#5\vspace{2mm} \\}%
-    \ifblank{#6}{}{\textbf{Responsibilities: -}{#6}\vspace{2mm}}%
-    \ifblank{#7}{}{\textbf{Key Achievements: -}{#7}}%
+    \begin{flushleft}
+    \textbf{\large #3} \\%
+    \end{flushleft}
+    {\textbf{\large #4 (#1 - #2)}} \\%
+    \ifblank{#5}{}{\large #5 \\}%
+    \ifblank{#6}{}{\textbf{\large Responsibilities: -}{\large #6}}%
+    \ifblank{#7}{}{\textbf{\large Key Achievements: -}{\large #7}}%
   }\\
 }
 
@@ -418,7 +409,7 @@
 }
 
 \newcommand{\twentyitemshort}[2]{%
-	#1&\parbox[t]{0.83\textwidth}{%
+	#1&\parbox[t]{0.98\textwidth}{%
 		#2%
 	}\\
 }
