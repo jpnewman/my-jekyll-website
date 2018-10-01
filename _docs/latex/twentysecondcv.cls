@@ -16,6 +16,8 @@
 \usepackage{fontawesome}
 \usepackage{xltxtra}
 
+\usepackage{graphicx}
+
 \RequirePackage{tikz}
 \RequirePackage{xcolor}
 \RequirePackage[absolute,overlay]{textpos}
@@ -154,7 +156,7 @@
 \newcommand*\icon[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=1pt, fill=mainblue,mainblue,text=white] (char) {#1};}}
 
 % Command for printing skill progress bars
-\newcommand\programming[1]{ 
+\newcommand\programming[1]{
 	\renewcommand{\programming}{
 		\begin{tikzpicture}
 			\foreach [count=\i] \x/\y in {#1}{
@@ -166,7 +168,7 @@
 	}
 }
 
-\newcommand\platforms[1]{ 
+\newcommand\platforms[1]{
 	\renewcommand{\platforms}{
 		\begin{tikzpicture}
 			\foreach [count=\i] \x/\y in {#1}{
@@ -178,7 +180,7 @@
 	}
 }
 
-\newcommand\oses[1]{ 
+\newcommand\oses[1]{
 	\renewcommand{\oses}{
 		\begin{tikzpicture}
 			\foreach [count=\i] \x/\y in {#1}{
@@ -190,13 +192,13 @@
 	}
 }
 
-\newcommand\projects[1]{ 
+\newcommand\projects[1]{
 	\renewcommand{\projects}{
 		{#1}
 	}
 }
 
-\newcommand\qualifications[1]{ 
+\newcommand\qualifications[1]{
 	\renewcommand{\qualifications}{
 		{#1}
 	}
@@ -216,73 +218,73 @@
   \begin{textblock}{6}(0.5, 0.2)
 
     %------------------------------------------------
-    
+
         \vspace{4mm}
     {\Huge\color{pblue}\cvname}
-    
+
     \vspace{2mm}
 
     %------------------------------------------------
-    
+
     {\Large\color{black!80}\cvjobtitle}
 
     %------------------------------------------------
-    
+
     \vspace{4mm}
     \renewcommand{\arraystretch}{2}
     \begin{tabular}{p{1cm} @{\hskip 0.5cm}p{5cm}}
       \ifthenelse{\equal{\cvnumberphone}{}}{}{
       		{$
               \begin{array}{l}
-              \hspace{4mm} \Huge \textnormal{\faMobile} 
+              \hspace{4mm} \Huge \textnormal{\faMobile}
               \end{array}
-              $} 
+              $}
             & \cvnumberphone\\}
-            
+
       \ifthenelse{\equal{\href{\cvsite}{\cvsite}}{}}{}{
             {$
               \begin{array}{l}
               \hspace{2.8mm} \huge \textnormal{\textcolor{test}{\faGlobe}}
               \end{array}
-              $} 
+              $}
             & \href{http://\cvsite}{\cvsite} \\}
       \ifthenelse{\equal{\cvmail}{}}{}{
             {$
               \begin{array}{l}
               \hspace{2.5mm} \huge \textnormal{\textcolor{yt}{\faEnvelopeO}}
               \end{array}
-              $} 
+              $}
             & \href{mailto:\cvmail}{\cvmail} \\}
-      
+
        \ifthenelse{\equal{\cvlinkedin}{}}{}{
             {$
               \begin{array}{l}
               \hspace{3mm} \huge \textnormal{\textcolor{linkedin}{\faLinkedin}}
               \end{array}
               $} & \href{https://www.linkedin.com\cvlinkedin}{\cvlinkedin} \\
-            }  
+            }
         \ifthenelse{\equal{\cvgithub}{}}{}{
             {$
               \begin{array}{l}
               \hspace{3mm} \huge \textnormal{\faGithub}
               \end{array}
               $} & \href{https://www.github.com/\cvgithub}{\cvgithub} \\
-            }   
-            
+            }
+
     \end{tabular}
 
     %------------------------------------------------
     \vspace{4mm}
     \profilesection{Skills}{4cm}
-    
+
     {\large \textbf{DevOps}}
 
 	\skills
-        
+
         %------------------------------------------------
-        
+
         \vspace{3mm}
-       
+
     {\large \textbf{Programming Languages}}
 
     \programming
@@ -294,7 +296,7 @@
     {\large \textbf{Platforms}}
 
     \platforms
-  
+
   \end{textblock}
 }
 
@@ -307,15 +309,15 @@
 
     \vspace{4mm}
     {\Huge\color{pblue}\cvname}
-    
+
     \vspace{2mm}
     {\Large\color{black!80}\cvjobtitle}
 
-    \profilesection{Projects}{32mm} 
-    
+    \profilesection{Projects}{32mm}
+
     \projects
 
-    \profilesection{Qualifications}{14mm} 
+    \profilesection{Qualifications}{14mm}
 
     \qualifications
 
@@ -395,7 +397,7 @@
 \newcommand{\twentyitem}[7]{%
   \parbox[t]{0.98\textwidth}{%
 		\large \textbf{#3} \\%
-		{\textbf{#4 (#1 - #2)}} \\%
+		{\textbf{\normalsize #4 (#1 - #2)}} \\%
     \ifblank{#5}{}{#5\vspace{2mm} \\}%
     \ifblank{#6}{}{\textbf{Responsibilities: -}{#6}\vspace{2mm}}%
     \ifblank{#7}{}{\textbf{Key Achievements: -}{#7}}%

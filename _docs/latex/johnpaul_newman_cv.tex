@@ -12,11 +12,21 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% XeLaTex
+
 %----------------------------------------------------------------------------------------
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
 \documentclass[a4paper]{twentysecondcv} % a4paper for A4
+
+\usepackage{hyperref}
+\hypersetup{
+pdftitle={John Paul Newman CV},
+pdfsubject={CV},
+pdfauthor={John Paul Newman},
+pdfkeywords={CV}
+}
 
 %%% Configure a directory location for sections
 \newcommand*{\sectiondir}{sections/}
@@ -24,7 +34,7 @@
 % Command for printing skill overview
 \newcommand\skills{
 \vspace{4mm}
-\includegraphics[scale=0.18]{DevOps.png}
+\includegraphics[scale=0.18]{DevOps.pdf}
 }
 
 % Programming skill bars
@@ -42,7 +52,7 @@
 	\item AWS Kinesis
 	\item AWS Glue \& Athena
 	\item AWS EMR (Scala \& PySpark)
-	\item AVRO
+	\item Apache Avro
 \end{itemize}
 \textbf{\href{https://github.com/jpnewman/papers}{OCR Solution - Hackathon : Winner}}
 \begin{itemize}
@@ -125,8 +135,9 @@ Pascal and Delphi \\
 
 \section{Summary}
 
-\summary{Windows and Linux engineer proficient in C/C++, C\#, Python, Powershell and Bash scripts. Working in Agile environments for a FinTech PCI DSS compliant business. \\
-Highly competent in Windows and Linux automation, using Chef and Ansible. Experience in infrastructure automation, using Packer and Terraform, on both AWS and VMware.}
+\summary{Skilled Windows and Linux DevOps Engineer, with 5+ years hands-on experience working in an Agile environment for a FinTech PCI-DSS compliant business. \\
+Highly competent in Windows and Linux automation, using Chef and Ansible. \\ Experience in infrastructure automation, using Packer and Terraform, on both Amazon Web Services (AWS) and VMware. Implementation of High Availability (HA) and Disaster Recovery (DR) best practices. \\
+Designed and managed Continuous Integration (CI)/Continuous Deployment (CD) tools, processes, and pipelines.}
 
 %----------------------------------------------------------------------------------------
 %	 EXPERIENCE
@@ -139,19 +150,17 @@ Highly competent in Windows and Linux automation, using Chef and Ansible. Experi
 \twentyitem
     	{2012}% Date From
 	{Present} % Date To
-    {DevOps/Senior Software Engineer} % Title
+    {Senior Software Engineer/DevOps} % Title
     {\href{https://www.wonga.com/}{Wonga}} % Location
     {Working as part of a small platform engineering team that support DevOps practices through the implementation and creation of CI/CD tools and infrastructure.} % Description
 	{\begin{itemize}
-		\item Implementation and maintenance of Amazon Web Services (AWS) infrastructure, including 200+ EC2 instances and Active Directory servers
+		\item Implementation and maintenance of AWS infrastructure, including 200+ EC2 instances with Active Directory servers
 		\item Implementation and maintenance of all CI/CD systems, including Jenkins, Artifactory, Gerrit, Octopus Deploy, and Windows build/deploy agents
-		\item Drive CI/CD best practices
 		\item Create Ansible playbooks for CI/CD servers
 		\item Create HashiCorp Terraform templates to deploy AWS and VMware architecture
 		\item Create HashiCorp Packer templates for AWS and VMware
-		\item Support SOA architecture applications that use NServiceBus using both MSMQ, with DTC, and RabbitMQ as a transportation layer
-		\item Interim Scrum Master, during the transitions
-		\item Interim Team Lead, of 3 people
+		\item Supporting Service Oriented Architecture (SOA) architecture applications that use NServiceBus using both MSMQ with DTC and RabbitMQ transportation layers
+		\item Interim Scrum Master and Team Lead
 	\end{itemize}
 	} % Responsibilities
 	{\begin{itemize}
@@ -159,9 +168,9 @@ Highly competent in Windows and Linux automation, using Chef and Ansible. Experi
 		\item Created a Data pipeline in Python using AWS Lambda, Kinesis, and Glue.
 		\item Created a process to deploy a legacy VB6 application using Chef, Powershell, and AWS S3
 		\item Developed and maintained Chef Cookbooks for Continuous Integration (CI) servers
-		\item Developed a RESTful Reporting Service using C\#, Entity Framework (EF), JQuery and a d3.js frontend
+		\item Developed a RESTful Reporting Service using C\#, Entity Framework (EF), JQuery and d3.js
 		\item Created Powershell build and deploy scripts to replace, Ruby Rake, and MSBuild scripts, which included a DSL implemented in PowerShell for NuGet packing
-		\item Developed a Ruby application that created a Graphviz DOT file of Microsoft Visual Studio solution dependencies, which was displayed via a JQuery website that allowed dependency selection and filtering
+		\item Developed a Ruby application to create Graphviz DOT files of Microsoft Visual Studio solution dependencies and display them via a JQuery website that allowed selection and filtering
 		\item Introduced the use of NuGet, Artifactory, Octopus Deploy to manage dependencies and deployment packages
 	\end{itemize}
 	} % Key Achievements
@@ -177,11 +186,11 @@ Highly competent in Windows and Linux automation, using Chef and Ansible. Experi
 	{2012} % Date To
     {Software Internationalization Engineer II} % Title
     {\href{https://www.popcap.com/}{PopCap Games International}} % Location
-    {Worked as one of two internationalization engineers responsible for source code changes to ensure games worked in multiple regions, including APAC.} % Description
+    {Worked as one of two internationalization engineers responsible for source code changes to ensure that flagship games, like PopCap's Bejeweled, Plants vs. Zombies, Peggle, and Zuma, worked in multiple regions.} % Description
 	{\begin{itemize}
 		\item Internationalization and localization of flagship games, across multiple platforms in multiple development languages, including C++ and Objective-C
 		\item Liaise with US and APAC project teams to achieve timely delivery and mutual project goals
-		\item Act as point of contact/subject matter expert for project Internationalization matters
+		\item Act as point of contact/subject matter expert for Internationalization
 	\end{itemize}
 	} % Responsibilities
 	{\begin{itemize}
@@ -204,7 +213,7 @@ Highly competent in Windows and Linux automation, using Chef and Ansible. Experi
     {Worked as lead engineer on various projects, responsible for projects and team members.} % Description
 	{}
 	{\begin{itemize}
-		\item Received client recognition for designing, developing and implementing an online system in Classic ASP that validated Translation Memories (TMs) and ensured higher leverage, reducing future project costs
+		\item Received client recognition for designing, developing and implementing an online system in Classic ASP that validated Translation Memories (TMs) and ensured higher leverage
 		\item Created extensive GNU and NMake makefiles
 		\item Developed a tool in C++ to extract text from the Palm OS RSRC file format, enabling shorter localization cycles
 	 \end{itemize}
@@ -235,7 +244,7 @@ Highly competent in Windows and Linux automation, using Chef and Ansible. Experi
     {}
     {\begin{itemize}
 		\item Migrated Novell to Windows NT 4 and Pegasus Mail to Exchange Server
-		\item Set-up and maintained Sage Line 100, MS-DOS based, accounting system
+		\item Set-up and maintained Sage Line 100, an MS-DOS based accounting system
 	 \end{itemize}
     }
 \end{twenty}

@@ -46,3 +46,32 @@ pdf2htmlEX johnpaul_newman_cv.pdf
 ~~~
 convert -density 300 -colorspace GRAY johnpaul_newman_cv.pdf johnpaul_newman_cv_bw.pdf
 ~~~
+
+## PDFInfo (hypersetup)
+
+pdfinfo johnpaul_newman_cv.pdf
+~~~
+
+> Results
+
+~~~
+Title:          John Paul Newman CV
+Subject:        CV
+Keywords:       CV
+Author:         John Paul Newman
+Creator:        LaTeX with hyperref package
+Producer:       XeTeX 0.99998
+CreationDate:   Mon Oct  1 14:36:26 2018 BST
+Tagged:         no
+UserProperties: no
+Suspects:       no
+Form:           none
+JavaScript:     no
+Pages:          2
+Encrypted:      no
+Page size:      595.28 x 841.89 pts (A4)
+Page rot:       0
+File size:      87939 bytes
+Optimized:      no
+PDF version:    1.5
+~~~
