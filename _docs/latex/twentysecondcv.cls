@@ -1,3 +1,6 @@
+
+% Based On: https://www.sharelatex.com/templates/cv-or-resume/smart-twenty-seconds-cv
+
 \ProvidesClass{twentysecondcv}[2015/02/28 CV class]
 \LoadClass{article}
 \NeedsTeXFormat{LaTeX2e}
@@ -364,9 +367,11 @@
 %	 Summary
 %----------------------------------------------------------------------------------------
 
-\newcommand{\summary}[1]{
+\newcommand{\summary}[1]{%
   \parbox[t]{0.98\textwidth}{%
-  \ifblank{#1}{}{\large #1 \\}%
+    \begin{flushleft}
+    \ifblank{#1}{}\textbf{\large #1} \\%
+    \end{flushleft}
   }\\
 }
 
