@@ -3,6 +3,46 @@
 
 Based On: <https://www.sharelatex.com/templates/cv-or-resume/smart-twenty-seconds-cv>
 
+## TexMaker
+
+- <http://www.xm1math.net/texmaker/>
+
+## Install LaTex Packages (manually)
+
+### Local Package Folder
+
+- <https://www.math.ias.edu/computing/faq/local-latex-style-files>
+
+~~~
+mkdir -p ~/texmf/tex/latex
+~~~
+
+### ClearSans
+
+- <https://ctan.org/tex-archive/fonts/clearsans?lang=en>
+
+~~~
+wget -P ~/texmf/tex/latex/ http://mirrors.ctan.org/install/fonts/clearsans.tds.zip
+~~~
+
+~~~
+unzip ~/texmf/tex/latex/clearsans.tds.zip -d ~/texmf/tex/latex/
+~~~
+
+~~~
+texhash
+~~~
+
+
+## Install LaTex Packages
+
+~~~
+sudo tlmgr update --self
+
+sudo tlmgr install fontawesome
+sudo tlmgr install clearsans
+~~~
+
 ## Generate PDF
 
 > Used by WebSite.
