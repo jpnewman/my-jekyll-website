@@ -2,9 +2,9 @@
 inkscape_app = /Applications/Inkscape.app/Contents/Resources/bin/inkscape
 xelatex_app = xelatex
 
-.PHONY: all install build build_debug build_prod serv serv_inc clean
+.PHONY: all init gen_docs build build_debug build_prod prod_upload serv serv_inc clean
 
-all: serv_inc
+all: serv
 
 init:
 	sudo gem install bundler
@@ -33,7 +33,7 @@ build_prod: clean gen_docs
 prod_upload: build_prod
 	aws s3 sync _site s3://johnpaulnewman.com --profile mysite
 
-serv:
+serv: build
 	bundle exec jekyll serve
 
 serv_inc:
