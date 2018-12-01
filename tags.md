@@ -2,8 +2,6 @@
 layout: page
 title: Tags
 permalink: /tag/
-add_to_navbar: 'true'
-weight: 2
 ---
 
 <div class='cloud'>

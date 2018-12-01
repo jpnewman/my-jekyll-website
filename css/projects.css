@@ -1,0 +1,40 @@
+.project-card {
+    border-style: dotted;
+    border-width: 0px;
+    border-top-width: 1px;
+}
+
+.project-card a {
+    text-decoration: none;
+}
+
+.project-card a:hover {
+    text-decoration: none;
+}
+
+.project-card div {
+    display: inline-block;
+    text-align: left;
+    vertical-align: top;
+}
+
+.project-card div:nth-child(1) {
+    width: 140px;
+    height: 140px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.project-card div:nth-child(1) img {
+    width: 125px;
+    height: 125px;
+    display: inline-block;
+    margin-left: 6px;
+    margin-top: 6px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.project-card div:nth-child(2) {
+    text-decoration: none;
+}

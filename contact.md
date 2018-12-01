@@ -3,7 +3,7 @@ layout: page
 title: Contact
 permalink: /contact/
 add_to_navbar: 'true'
-weight: 7
+weight: 5
 ---
 
 # Contact Me

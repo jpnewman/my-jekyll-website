@@ -3,7 +3,7 @@ layout: page
 title: Games
 permalink: /games/
 add_to_navbar: 'true'
-weight: 4
+weight: 2
 ---
 
 # Games

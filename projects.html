@@ -1,0 +1,23 @@
+---
+layout: page
+title: Projects
+permalink: /projects/
+add_to_navbar: 'true'
+weight: 1
+---
+
+{% for page in site.pages %}
+{% if page.categories contains 'projects' %}
+<div class="project-card">
+<a href="{{ BASE_PATH }}{{ page.url }}">
+  <div>{% if page.screenshot %}<img src="{{ page.url }}{{ page.screenshot }}" />{% else %}&nbsp;{% endif %}</div>
+  <div>
+    <p>{{ page.title }}</p>
+	  <p>{% if page.summary %}{{ page.summary | strip_html | truncatewords: 40 }}{% endif %}</p>
+  </div>
+</a>
+</div>
+{% endif %}
+{% endfor %}
+
+<strong>N.B.</strong> All logos belong to their respective owners

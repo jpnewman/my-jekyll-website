@@ -3,7 +3,7 @@ layout: cv
 title: CV
 permalink: /cv/
 add_to_navbar: 'true'
-weight: 6
+weight: 4
 ---
 
 # Summary
