@@ -25,6 +25,12 @@ brew install ImageMagick
 bundle install --path _vendor/bundle
 ~~~
 
+## Set Environment
+
+~~~
+rvm use ruby-2.5.1
+~~~
+
 ## Generate CV PDF
 
 - [InkScape](_docs/inkscape)
@@ -58,31 +64,31 @@ python -m SimpleHTTPServer 4000
 # Build, without serving
 
 ~~~
-bundle exec jekyll build
+make build
 ~~~
 
 # Build, debug logging
 
 ~~~
-JEKYLL_LOG_LEVEL=debug bundle exec jekyll build
+make build_debug
 ~~~
 
 # Build, debug and trace
 
 ~~~
-JEKYLL_LOG_LEVEL=debug bundle exec jekyll build --trace
+make build_debug
 ~~~
 
 # Build, PROD
 
 ~~~
-JEKYLL_ENV=prod bundle exec jekyll build
+make build_prod
 ~~~
 
 # Clean
 
 ~~~
-bundle exec jekyll clean
+make clean
 ~~~
 
 ## Open site
@@ -101,10 +107,4 @@ open http://127.0.0.1:4000
 
 ~~~
 bundle exec jekyll post "XSLT functions with Javascript"
-~~~
-
-# Convert TXT files to Jekyll Markdown files
-
-~~~
-ruby _scripts/convert_files.rb
 ~~~
