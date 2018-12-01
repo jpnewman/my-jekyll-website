@@ -15,26 +15,19 @@ module Jekyll
         raise 'Please include source_codes in front matter'
       end
 
-      page_path = context.registers[:page].path
+      page_path = context.registers[:page]['path']
       page_path = page_path[0..-9] if page_path =~ %r{\/#excerpt$}
       post_path = File.dirname(page_path)
 
-      html = ''
-
-      context.registers[:page]['source_codes'].each do |sc|
-        next unless @source_codes_file_filter.casecmp(sc['file'])
-
-        file_path = File.join(post_path, sc['file'])
-
-        Jekyll.logger.debug 'SourceCode: path', context.registers[:page].path
-        Jekyll.logger.debug 'SourceCode: post_path', post_path
-        Jekyll.logger.debug 'SourceCode: file_path', file_path
-
-        text = File.open(file_path).read
-        html = block_code(text, sc['language'], sc['file'], sc['title'])
+      sc = context.registers[:page]['source_codes'].find {|e| e['file'] == @source_codes_file_filter}
+      if sc.nil?
+        raise "Please include '#{@source_codes_file_filter}' file in source_codes within the front matter"
       end
 
-      html
+      file_path = File.join(post_path, @source_codes_file_filter)
+      text = File.open(file_path).read
+
+      block_code(text, sc['language'], sc['file'], sc['title'])
     end
   end
 end
