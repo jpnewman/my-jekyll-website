@@ -31,7 +31,7 @@ build_prod: clean gen_docs
 	JEKYLL_ENV=prod bundle exec jekyll build
 
 prod_upload: build_prod
-	aws s3 sync _site s3://johnpaulnewman.com --profile mysite --delete
+	aws s3 sync --delete ./_site s3://johnpaulnewman.com --acl public-read --profile mysite
 
 serv: build
 	bundle exec jekyll serve
