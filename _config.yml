@@ -69,7 +69,7 @@ tag_permalink_style: pretty
 category_dir: cat
 
 kramdown:
-  default_lang: php
+  default_lang: bash
   auto_ids: true
   footnote_nr: 1
   entity_output: as_char
