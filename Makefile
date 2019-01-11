@@ -38,7 +38,7 @@ build_prod: clean gen_favicon gen_docs
 prod_upload: build_prod
 	aws s3 sync --delete ./_site s3://johnpaulnewman.com --acl public-read --profile mysite
 
-serv: build
+serv: clean build
 	bundle exec jekyll serve
 
 serv_inc:
