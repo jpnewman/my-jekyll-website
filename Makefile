@@ -28,10 +28,10 @@ gen_docs:
 build: gen_favicon gen_docs
 	bundle exec jekyll build
 
-build_debug: clean gen_docs
+build_debug: clean gen_favicon gen_docs
 	JEKYLL_LOG_LEVEL=debug bundle exec jekyll build --trace
 
-build_prod: clean gen_docs
+build_prod: clean gen_favicon gen_docs
 	JEKYLL_ENV=prod bundle exec jekyll build
 
 prod_upload: build_prod
