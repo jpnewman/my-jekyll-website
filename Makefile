@@ -1,8 +1,9 @@
 
+convert_app = convert
 inkscape_app = /Applications/Inkscape.app/Contents/Resources/bin/inkscape
 xelatex_app = xelatex
 
-.PHONY: all init gen_docs build build_debug build_prod prod_upload serv serv_inc clean
+.PHONY: all init gen_favicon gen_docs build build_debug build_prod prod_upload serv serv_inc clean
 
 all: serv
 
@@ -14,14 +15,17 @@ init:
 
 	bundle install --path _vendor/bundle
 
+gen_favicon:
+	$(convert_app) -density 384 -background transparent $(PWD)/_docs/favicon/favicon.svg -define icon:auto-resize $(PWD)/favicon.ico
+
 gen_docs:
 	$(inkscape_app) -D -z --file=$(PWD)/_docs/inkscape/DevOps.svg --export-png=$(PWD)/_docs/latex/DevOps.png
 
 	cd ./_docs/latex/; \
 	$(xelatex_app) johnpaul_newman_cv.tex; \
-	cp johnpaul_newman_cv.pdf ../../johnpaul_newman_cv.pdf
+	cp johnpaul_newman_cv.pdf $(PWD)/johnpaul_newman_cv.pdf
 
-build: gen_docs
+build: gen_favicon gen_docs
 	bundle exec jekyll build
 
 build_debug: clean gen_docs
@@ -41,3 +45,6 @@ serv_inc:
 
 clean:
 	bundle exec jekyll clean
+
+	rm -f $(PWD)/favicon.ico || true
+	rm -f $(PWD)/johnpaul_newman_cv.pdf || true

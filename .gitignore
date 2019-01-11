@@ -4,6 +4,9 @@ _site
 .sass-cache
 .jekyll-metadata
 
+# Favicon
+favicon.ico
+
 # Sublime Text
 *.sublime-workspace
 
