@@ -164,11 +164,11 @@
     \foreach [count=\c] \z in {0, 1, 2}{
       \foreach [count=\i] \x/\y in {#1}{
         \ifnum\y>\z\relax%
-          \draw[fill=white,mainblue] (\z*2.10,\i) rectangle (2*\c+\z*0.10,\i+0.01);%
+          \draw[fill=white,mainblue] (\z*2.10,\i/2) rectangle (2*\c+\z*0.10,\i/2);%
         \else%
-          \draw[fill=maingray,maingray] (\z*2.10,\i) rectangle (2*\c+\z*0.10,\i+0.01);%
+          \draw[fill=maingray,maingray] (\z*2.10,\i/2) rectangle (2*\c+\z*0.10,\i/2);%
         \fi
-        \node [above right] at (0,\i+0.005) {\x};%
+        \node [above right] at (0,\i/2) {\x};%
       }
     }
   \end{tikzpicture}
@@ -200,6 +200,18 @@
 
 \newcommand\cicd[1]{
   \renewcommand{\cicd}{
+    \skillitems{#1}
+  }
+}
+
+\newcommand\monitoring[1]{
+  \renewcommand{\monitoring}{
+    \skillitems{#1}
+  }
+}
+
+\newcommand\alerting[1]{
+  \renewcommand{\alerting}{
     \skillitems{#1}
   }
 }
@@ -291,32 +303,29 @@
 
     \skills
 
-        %------------------------------------------------
+    %------------------------------------------------
 
-    \vspace{2.5mm}
-    {\large \textbf{Programming Languages}}
-
-    \programming
-
-    \vspace{2.5mm}
-    {\large \textbf{Infrastructure  as Code (IaC)}}
-
-    \iac
-
-    \vspace{2.5mm}
-    {\large \textbf{Operating Systems}}
-
-    \oses
-
-    \vspace{2.5mm}
-    {\large \textbf{Platforms}}
-
-    \platforms
-
-    \vspace{2.5mm}
-    {\large \textbf{CI/CD}}
-
-    \cicd
+    \vspace{0.5mm}
+    {\large \textbf{Programming Languages}} \\
+    \programming \\
+    \vspace{0.5mm}
+    {\large \textbf{Infrastructure  as Code (IaC)}} \\
+    \iac \\
+    \vspace{0.5mm}
+    {\large \textbf{Operating Systems}} \\
+    \oses \\
+    \vspace{0.5mm}
+    {\large \textbf{Platforms}} \\
+    \platforms \\
+    \vspace{0.5mm}
+    {\large \textbf{CI/CD}} \\
+    \cicd \\
+    \vspace{0.5mm}
+    {\large \textbf{Monitoring}} \\
+    \monitoring \\
+    \vspace{0.5mm}
+    {\large \textbf{Alerting}} \\
+    \alerting
 
   \end{textblock}
 }
