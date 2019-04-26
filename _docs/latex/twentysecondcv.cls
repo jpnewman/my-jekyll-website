@@ -388,15 +388,17 @@
 	\end{tabular*}
 }
 
-\newcommand{\twentyitem}[7]{%
+%\twentyitem{<date from>}{<date to>}{<title>}{<company>}{<location>}{<description>}{<responsibilities>}{<key achievements>}
+\newcommand{\twentyitem}[8]{%
   \parbox[t]{0.98\textwidth}{%
     \begin{flushleft}
-    \textbf{\large #3} \\%
+    \textbf{\large #3} \\ % Location
     \end{flushleft}
-    {\textbf{\large #4 (#1 - #2)}} \\%
-    \ifblank{#5}{}{\large #5 \\}%
-    \ifblank{#6}{}{\textbf{\large Responsibilities: -}{\large #6}}%
-    \ifblank{#7}{}{\textbf{\large Key Achievements: -}{\large #7}}%
+    \noindent
+    {\textbf{\large #4 (#1 - #2)}} \hfill \ifblank{#5}{}{\textbf{\large #5}} \\ % Company (DateFrom - DateTo) Location
+    \ifblank{#6}{}{\large #6 \\} % Description
+    \ifblank{#7}{}{\textbf{\large Responsibilities: -}{\large #7}} % Responsibilities
+    \ifblank{#8}{}{\textbf{\large Key Achievements: -}{\large #8}} % Key Achievements
   }\\
 }
 
