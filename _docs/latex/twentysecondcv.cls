@@ -171,6 +171,18 @@
 	}
 }
 
+\newcommand\iac[1]{
+	\renewcommand{\iac}{
+		\begin{tikzpicture}
+			\foreach [count=\i] \x/\y in {#1}{
+				\draw[fill=maingray,maingray] (0,\i) rectangle (6,\i+0.4);
+				\draw[fill=white,mainblue](0,\i) rectangle (\y,\i+0.4);
+				\node [above right] at (0,\i+0.35) {\x};
+			}
+		\end{tikzpicture}
+	}
+}
+
 \newcommand\platforms[1]{
 	\renewcommand{\platforms}{
 		\begin{tikzpicture}
@@ -277,26 +289,29 @@
     \end{tabular}
 
     %------------------------------------------------
-    \vspace{4mm}
+    \vspace{2.5mm}
     \profilesection{Skills}{4cm}
 
-    {\large \textbf{DevOps}}
-
-	\skills
+    \skills
 
         %------------------------------------------------
 
-    \vspace{7.5mm}
+    \vspace{2.5mm}
     {\large \textbf{Programming Languages}}
 
     \programming
 
-    \vspace{5.5mm}
+    \vspace{2.5mm}
+    {\large \textbf{Infrastructure  as Code (IaC)}}
+
+    \iac
+
+    \vspace{2.5mm}
     {\large \textbf{Operating Systems}}
 
     \oses
 
-    \vspace{5.5mm}
+    \vspace{2.5mm}
     {\large \textbf{Platforms}}
 
     \platforms
