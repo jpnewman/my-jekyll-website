@@ -25,6 +25,30 @@ brew install ImageMagick
 bundle install --path _vendor/bundle
 ~~~
 
+## Set RVM
+
+- <https://usabilityetc.com/articles/ruby-on-mac-os-x-with-rvm/>
+- <https://rvm.io/rvm/install>
+
+~~~
+brew install gnupg
+~~~
+
+~~~
+curl -sSL https://rvm.io/mpapis.asc | gpg --import -
+curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
+~~~
+
+~~~
+curl -sSL https://get.rvm.io | bash -s stable --ruby
+~~~
+
+~~~
+rvm install 2.5.1
+~~~
+
+> Restart the shell.
+
 ## Set Environment
 
 ~~~
