@@ -370,7 +370,7 @@
 \newcommand{\summary}[1]{%
   \parbox[t]{0.98\textwidth}{%
     \begin{flushleft}
-    \ifblank{#1}{}\textbf{\large #1} \\%
+    \ifblank{#1}{}\textnormal{\large #1} \\%
     \end{flushleft}
   }\\
 }
