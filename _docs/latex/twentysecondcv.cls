@@ -6,8 +6,8 @@
 \NeedsTeXFormat{LaTeX2e}
 
 %----------------------------------------------------------------------------------------
-%	 REQUIRED PACKAGES
-%-----------------------------------------------------------------------	-----------------
+%   REQUIRED PACKAGES
+%----------------------------------------------------------------------------------------
 
 \RequirePackage[quiet]{fontspec}
 \RequirePackage[sfdefault]{ClearSans}
@@ -63,7 +63,7 @@
 \fi
 
 %----------------------------------------------------------------------------------------
-%	 COLOURS
+%   COLOURS
 %----------------------------------------------------------------------------------------
 
 \definecolor{white}{RGB}{255,255,255}
@@ -114,7 +114,7 @@
 \colorlet{headercolor}{pblue}
 
 %----------------------------------------------------------------------------------------
-%	 MISC CONFIGURATIONS
+%   MISC CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
 % \renewcommand{\bfseries}{\color{black}} % Make \textbf produce coloured text instead
@@ -124,12 +124,12 @@
 \setlength{\parindent}{0pt} % Disable paragraph indentation
 
 % --------------------------------------------------------------------------------------
-% 	FONTS
+%   FONTS
 %-------------------------------------------------------------------------------------
 \newfontfamily\headingfont[Path = fonts/]{segoeuib.ttf}
 
 %----------------------------------------------------------------------------------------
-%	 SIDEBAR DEFINITIONS
+%   SIDEBAR DEFINITIONS
 %----------------------------------------------------------------------------------------
 
 \setlength{\TPHorizModule}{1cm} % Left margin
@@ -160,63 +160,100 @@
 
 % Command for printing skill progress bars
 \newcommand\programming[1]{
-	\renewcommand{\programming}{
-		\begin{tikzpicture}
-			\foreach [count=\i] \x/\y in {#1}{
-				\draw[fill=maingray,maingray] (0,\i) rectangle (6,\i+0.4);
-				\draw[fill=white,mainblue](0,\i) rectangle (\y,\i+0.4);
-				\node [above right] at (0,\i+0.35) {\x};
-			}
-		\end{tikzpicture}
-	}
+  \renewcommand{\programming}{
+    \begin{tikzpicture}
+      \foreach [count=\c] \z in {0, 1, 2}{
+        \foreach [count=\i] \x/\y in {#1}{
+          \ifnum\y>\z\relax%
+            \draw[fill=white,mainblue] (\z*2.10,\i) rectangle (2*\c+\z*0.10,\i+0.4);%
+          \else%
+            \draw[fill=maingray,maingray] (\z*2.10,\i) rectangle (2*\c+\z*0.10,\i+0.4);%
+          \fi
+          \node [above right] at (0,\i+0.35) {\x};%
+        }
+      }
+    \end{tikzpicture}
+  }
 }
 
 \newcommand\iac[1]{
-	\renewcommand{\iac}{
-		\begin{tikzpicture}
-			\foreach [count=\i] \x/\y in {#1}{
-				\draw[fill=maingray,maingray] (0,\i) rectangle (6,\i+0.4);
-				\draw[fill=white,mainblue](0,\i) rectangle (\y,\i+0.4);
-				\node [above right] at (0,\i+0.35) {\x};
-			}
-		\end{tikzpicture}
-	}
-}
-
-\newcommand\platforms[1]{
-	\renewcommand{\platforms}{
-		\begin{tikzpicture}
-			\foreach [count=\i] \x/\y in {#1}{
-				\draw[fill=maingray,maingray] (0,\i) rectangle (6,\i+0.4);
-				\draw[fill=white,mainblue](0,\i) rectangle (\y,\i+0.4);
-				\node [above right] at (0,\i+0.35) {\x};
-			}
-		\end{tikzpicture}
-	}
+  \renewcommand{\iac}{
+    \begin{tikzpicture}
+      \foreach [count=\c] \z in {0, 1, 2}{
+        \foreach [count=\i] \x/\y in {#1}{
+          \ifnum\y>\z\relax%
+            \draw[fill=white,mainblue] (\z*2.10,\i) rectangle (2*\c+\z*0.10,\i+0.4);%
+          \else%
+            \draw[fill=maingray,maingray] (\z*2.10,\i) rectangle (2*\c+\z*0.10,\i+0.4);%
+          \fi
+          \node [above right] at (0,\i+0.35) {\x};%
+        }
+      }
+    \end{tikzpicture}
+  }
 }
 
 \newcommand\oses[1]{
-	\renewcommand{\oses}{
-		\begin{tikzpicture}
-			\foreach [count=\i] \x/\y in {#1}{
-				\draw[fill=maingray,maingray] (0,\i) rectangle (6,\i+0.4);
-				\draw[fill=white,mainblue](0,\i) rectangle (\y,\i+0.4);
-				\node [above right] at (0,\i+0.35) {\x};
-			}
-		\end{tikzpicture}
-	}
+  \renewcommand{\oses}{
+    \begin{tikzpicture}
+      \foreach [count=\c] \z in {0, 1, 2}{
+        \foreach [count=\i] \x/\y in {#1}{
+          \ifnum\y>\z\relax%
+            \draw[fill=white,mainblue] (\z*2.10,\i) rectangle (2*\c+\z*0.10,\i+0.4);%
+          \else%
+            \draw[fill=maingray,maingray] (\z*2.10,\i) rectangle (2*\c+\z*0.10,\i+0.4);%
+          \fi
+          \node [above right] at (0,\i+0.35) {\x};%
+        }
+      }
+    \end{tikzpicture}
+  }
+}
+
+\newcommand\platforms[1]{
+  \renewcommand{\platforms}{
+    \begin{tikzpicture}
+      \foreach [count=\c] \z in {0, 1, 2}{
+        \foreach [count=\i] \x/\y in {#1}{
+          \ifnum\y>\z\relax%
+            \draw[fill=white,mainblue] (\z*2.10,\i) rectangle (2*\c+\z*0.10,\i+0.4);%
+          \else%
+            \draw[fill=maingray,maingray] (\z*2.10,\i) rectangle (2*\c+\z*0.10,\i+0.4);%
+          \fi
+          \node [above right] at (0,\i+0.35) {\x};%
+        }
+      }
+    \end{tikzpicture}
+  }
+}
+
+\newcommand\cicd[1]{
+  \renewcommand{\cicd}{
+    \begin{tikzpicture}
+      \foreach [count=\c] \z in {0, 1, 2}{
+        \foreach [count=\i] \x/\y in {#1}{
+          \ifnum\y>\z\relax%
+            \draw[fill=white,mainblue] (\z*2.10,\i) rectangle (2*\c+\z*0.10,\i+0.4);%
+          \else%
+            \draw[fill=maingray,maingray] (\z*2.10,\i) rectangle (2*\c+\z*0.10,\i+0.4);%
+          \fi
+          \node [above right] at (0,\i+0.35) {\x};%
+        }
+      }
+    \end{tikzpicture}
+  }
 }
 
 \newcommand\projects[1]{
-	\renewcommand{\projects}{
-		{#1}
-	}
+  \renewcommand{\projects}{
+    {#1}
+  }
 }
 
 \newcommand\qualifications[1]{
-	\renewcommand{\qualifications}{
-		{#1}
-	}
+  \renewcommand{\qualifications}{
+    {#1}
+  }
 }
 
 %----------------------------------------------------------------------------------------
@@ -234,7 +271,7 @@
 
     %------------------------------------------------
 
-        \vspace{4mm}
+    \vspace{4mm}
     {\Huge\color{pblue}\cvname}
 
     \vspace{2mm}
@@ -249,7 +286,7 @@
     \renewcommand{\arraystretch}{2}
     \begin{tabular}{p{1cm} @{\hskip 0.5cm}p{5cm}}
       \ifthenelse{\equal{\cvnumberphone}{}}{}{
-      		{$
+          {$
               \begin{array}{l}
               \hspace{4mm} \Huge \textnormal{\faMobile}
               \end{array}
@@ -316,6 +353,11 @@
 
     \platforms
 
+    \vspace{2.5mm}
+    {\large \textbf{CI/CD}}
+
+    \cicd
+
   \end{textblock}
 }
 
@@ -345,41 +387,41 @@
 }
 
 %----------------------------------------------------------------------------------------
-%	 COLOURED SECTION TITLE BOX
+%   COLOURED SECTION TITLE BOX
 %----------------------------------------------------------------------------------------
 
 % Command to create the rounded boxes around the first three letters of section titles
 % \newcommand*\round[2]{%
-% 	\tikz[baseline=(char.base)]\node[anchor=north west, draw,rectangle, rounded corners, inner sep=1.6pt, minimum size=5.5mm, text height=3.6mm, fill=#2,#2,text=white](char){#1};%
+%   \tikz[baseline=(char.base)]\node[anchor=north west, draw,rectangle, rounded corners, inner sep=1.6pt, minimum size=5.5mm, text height=3.6mm, fill=#2,#2,text=white](char){#1};%
 % }
 
 \def\@sectioncolor#1#2#3{%
-	{%
-		\color{pblue} #1#2#3%
-	}%
+  {%
+    \color{pblue} #1#2#3%
+  }%
 }
 
 
 \renewcommand{\section}[1]{
   \par\vspace{\parskip}
-	{%
-		\LARGE\headingfont\color{headercolor}%
-		#1%
-	}
+  {%
+    \LARGE\headingfont\color{headercolor}%
+    #1%
+  }
   \par\vspace{\parskip}
 }
 
 \renewcommand{\subsection}[1]{
-	\par\vspace{.5\parskip}{%
-		\Large\headingfont\color{headercolor} #1%
-	}
-	\par\vspace{.25\parskip}%
+  \par\vspace{.5\parskip}{%
+    \Large\headingfont\color{headercolor} #1%
+  }
+  \par\vspace{.25\parskip}%
 }
 
 \pagestyle{empty}
 
 %----------------------------------------------------------------------------------------
-%	 Summary
+%   Summary
 %----------------------------------------------------------------------------------------
 
 \newcommand{\summary}[1]{%
@@ -391,16 +433,16 @@
 }
 
 %----------------------------------------------------------------------------------------
-%	 LONG LIST ENVIRONMENT
+%   LONG LIST ENVIRONMENT
 %----------------------------------------------------------------------------------------
 
 \setlength{\tabcolsep}{0pt}
 
 % New environment for the long list
 \newenvironment{twenty}{
-	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}
 }{
-	\end{tabular*}
+  \end{tabular*}
 }
 
 %\twentyitem{<date from>}{<date to>}{<title>}{<company>}{<location>}{<description>}{<responsibilities>}{<key achievements>}
@@ -418,26 +460,26 @@
 }
 
 %----------------------------------------------------------------------------------------
-%	 SMALL LIST ENVIRONMENT
+%   SMALL LIST ENVIRONMENT
 %----------------------------------------------------------------------------------------
 
 \setlength{\tabcolsep}{0pt}
 
 % New environment for the small list
 \newenvironment{twentyshort}{%
-	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}
 }{%
-	\end{tabular*}
+  \end{tabular*}
 }
 
 \newcommand{\twentyitemshort}[2]{%
-	#1&\parbox[t]{0.98\textwidth}{%
-		#2%
-	}\\
+  #1&\parbox[t]{0.98\textwidth}{%
+    #2%
+  }\\
 }
 
 %----------------------------------------------------------------------------------------
-%	 MARGINS AND LINKS
+%   MARGINS AND LINKS
 %----------------------------------------------------------------------------------------
 
 \RequirePackage[left=7.6cm,top=0.1cm,right=1cm,bottom=0.1cm,nohead,nofoot]{geometry}
@@ -464,4 +506,3 @@
     % sets the opacity at which the bubble text is shown
     bubble text opacity = 1,
 }
-
