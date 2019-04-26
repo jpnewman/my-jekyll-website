@@ -69,7 +69,7 @@
 \definecolor{white}{RGB}{255,255,255}
 \definecolor{gray}{HTML}{4D4D4D}
 \definecolor{sidecolor}{HTML}{E7E7E7}
-\definecolor{mainblue}{HTML}{0E5484}
+\definecolor{mainblue}{HTML}{86A9C1}
 \definecolor{maingray}{HTML}{B9B9B9}
 
 \definecolor{pblue}{HTML}{0395DE}
@@ -159,88 +159,48 @@
 \newcommand*\icon[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=1pt, fill=mainblue,mainblue,text=white] (char) {#1};}}
 
 % Command for printing skill progress bars
+\newcommand\skillitems[1]{
+  \begin{tikzpicture}
+    \foreach [count=\c] \z in {0, 1, 2}{
+      \foreach [count=\i] \x/\y in {#1}{
+        \ifnum\y>\z\relax%
+          \draw[fill=white,mainblue] (\z*2.10,\i) rectangle (2*\c+\z*0.10,\i+0.01);%
+        \else%
+          \draw[fill=maingray,maingray] (\z*2.10,\i) rectangle (2*\c+\z*0.10,\i+0.01);%
+        \fi
+        \node [above right] at (0,\i+0.005) {\x};%
+      }
+    }
+  \end{tikzpicture}
+}
+
 \newcommand\programming[1]{
   \renewcommand{\programming}{
-    \begin{tikzpicture}
-      \foreach [count=\c] \z in {0, 1, 2}{
-        \foreach [count=\i] \x/\y in {#1}{
-          \ifnum\y>\z\relax%
-            \draw[fill=white,mainblue] (\z*2.10,\i) rectangle (2*\c+\z*0.10,\i+0.4);%
-          \else%
-            \draw[fill=maingray,maingray] (\z*2.10,\i) rectangle (2*\c+\z*0.10,\i+0.4);%
-          \fi
-          \node [above right] at (0,\i+0.35) {\x};%
-        }
-      }
-    \end{tikzpicture}
+    \skillitems{#1}
   }
 }
 
 \newcommand\iac[1]{
   \renewcommand{\iac}{
-    \begin{tikzpicture}
-      \foreach [count=\c] \z in {0, 1, 2}{
-        \foreach [count=\i] \x/\y in {#1}{
-          \ifnum\y>\z\relax%
-            \draw[fill=white,mainblue] (\z*2.10,\i) rectangle (2*\c+\z*0.10,\i+0.4);%
-          \else%
-            \draw[fill=maingray,maingray] (\z*2.10,\i) rectangle (2*\c+\z*0.10,\i+0.4);%
-          \fi
-          \node [above right] at (0,\i+0.35) {\x};%
-        }
-      }
-    \end{tikzpicture}
+    \skillitems{#1}
   }
 }
 
 \newcommand\oses[1]{
   \renewcommand{\oses}{
-    \begin{tikzpicture}
-      \foreach [count=\c] \z in {0, 1, 2}{
-        \foreach [count=\i] \x/\y in {#1}{
-          \ifnum\y>\z\relax%
-            \draw[fill=white,mainblue] (\z*2.10,\i) rectangle (2*\c+\z*0.10,\i+0.4);%
-          \else%
-            \draw[fill=maingray,maingray] (\z*2.10,\i) rectangle (2*\c+\z*0.10,\i+0.4);%
-          \fi
-          \node [above right] at (0,\i+0.35) {\x};%
-        }
-      }
-    \end{tikzpicture}
+    \skillitems{#1}
   }
 }
 
 \newcommand\platforms[1]{
   \renewcommand{\platforms}{
-    \begin{tikzpicture}
-      \foreach [count=\c] \z in {0, 1, 2}{
-        \foreach [count=\i] \x/\y in {#1}{
-          \ifnum\y>\z\relax%
-            \draw[fill=white,mainblue] (\z*2.10,\i) rectangle (2*\c+\z*0.10,\i+0.4);%
-          \else%
-            \draw[fill=maingray,maingray] (\z*2.10,\i) rectangle (2*\c+\z*0.10,\i+0.4);%
-          \fi
-          \node [above right] at (0,\i+0.35) {\x};%
-        }
-      }
-    \end{tikzpicture}
+    \skillitems{#1}
   }
 }
 
 \newcommand\cicd[1]{
   \renewcommand{\cicd}{
-    \begin{tikzpicture}
-      \foreach [count=\c] \z in {0, 1, 2}{
-        \foreach [count=\i] \x/\y in {#1}{
-          \ifnum\y>\z\relax%
-            \draw[fill=white,mainblue] (\z*2.10,\i) rectangle (2*\c+\z*0.10,\i+0.4);%
-          \else%
-            \draw[fill=maingray,maingray] (\z*2.10,\i) rectangle (2*\c+\z*0.10,\i+0.4);%
-          \fi
-          \node [above right] at (0,\i+0.35) {\x};%
-        }
-      }
-    \end{tikzpicture}
+    \skillitems{#1}
   }
 }
 
