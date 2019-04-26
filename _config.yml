@@ -20,7 +20,7 @@ exclude:
   - 'Gemfile*'
   - 'Makefile'
 
-url: 'https://johnpaulnewman.com' # the base hostname & protocol for your site
+url: 'http://johnpaulnewman.com' # the base hostname & protocol for your site
 twitter_username:
 github_username:  jpnewman
 
