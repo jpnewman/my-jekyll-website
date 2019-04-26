@@ -3,7 +3,7 @@ convert_app = convert
 inkscape_app = /Applications/Inkscape.app/Contents/Resources/bin/inkscape
 xelatex_app = xelatex
 
-.PHONY: all init gen_favicon gen_svg gen_docs build build_debug build_prod prod_upload serv serv_inc clean
+.PHONY: all init init_docs gen_favicon gen_svg gen_docs build build_debug build_prod prod_upload serv serv_inc clean
 
 all: serv
 
@@ -14,6 +14,12 @@ init:
 	brew install ImageMagick
 
 	bundle install --path _vendor/bundle
+
+init_docs:
+	sudo tlmgr update --self
+	sudo tlmgr install fontawesome
+	sudo tlmgr install clearsans
+	sudo texhash
 
 gen_favicon:
 	$(convert_app) -density 384 -background transparent $(PWD)/_docs/favicon/favicon.svg -define icon:auto-resize $(PWD)/favicon.ico
