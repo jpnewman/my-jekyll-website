@@ -43,6 +43,12 @@ sudo tlmgr install fontawesome
 sudo tlmgr install clearsans
 ~~~
 
+## Generate DevOps.pdf
+
+~~~
+/Applications/Inkscape.app/Contents/Resources/bin/inkscape -D -z --file=$(PWD)/../inkscape/DevOps.svg --export-pdf=$(PWD)/DevOps.pdf --export-text-to-path --export-dpi 300
+~~~
+
 ## Generate PDF
 
 > Used by WebSite.
