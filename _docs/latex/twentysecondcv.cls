@@ -162,14 +162,7 @@
 \newcommand\skillitems[1]{
   \begin{tikzpicture}
     \foreach [count=\i] \x/\y in {#1}{
-      \foreach [count=\c] \z in {0, 1, 2}{
-        \ifnum\y>\z\relax%
-          \draw[fill=white,mainblue] (\z*2,\i/2) rectangle (2*\c,\i/2);%
-        \else%
-          \draw[fill=maingray,maingray] (\z*2,\i/2) rectangle (2*\c,\i/2);%
-        \fi
-        \node [above right] at (0,\i/2) {\x};%
-      }
+      \node [right] at (0,\i/2) {\x};%
     }
   \end{tikzpicture}
 }
@@ -305,25 +298,24 @@
 
     %------------------------------------------------
 
-    \vspace{0.5mm}
     {\large \textbf{Programming Languages}} \\
     \programming \\
-    \vspace{0.5mm}
+    \\
     {\large \textbf{Infrastructure  as Code (IaC)}} \\
     \iac \\
-    \vspace{0.5mm}
+    \\
     {\large \textbf{Operating Systems}} \\
     \oses \\
-    \vspace{0.5mm}
+    \\
     {\large \textbf{Platforms}} \\
     \platforms \\
-    \vspace{0.5mm}
+    \\
     {\large \textbf{CI/CD}} \\
     \cicd \\
-    \vspace{0.5mm}
+    \\
     {\large \textbf{Monitoring}} \\
     \monitoring \\
-    \vspace{0.5mm}
+    \\
     {\large \textbf{Alerting}} \\
     \alerting
 
