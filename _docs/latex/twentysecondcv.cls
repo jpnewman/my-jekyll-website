@@ -164,9 +164,9 @@
     \foreach [count=\c] \z in {0, 1, 2}{
       \foreach [count=\i] \x/\y in {#1}{
         \ifnum\y>\z\relax%
-          \draw[fill=white,mainblue] (\z*2.10,\i/2) rectangle (2*\c+\z*0.10,\i/2);%
+          \draw[fill=white,mainblue] (\z*2,\i/2) rectangle (2*\c,\i/2);%
         \else%
-          \draw[fill=maingray,maingray] (\z*2.10,\i/2) rectangle (2*\c+\z*0.10,\i/2);%
+          \draw[fill=maingray,maingray] (\z*2,\i/2) rectangle (2*\c,\i/2);%
         \fi
         \node [above right] at (0,\i/2) {\x};%
       }
