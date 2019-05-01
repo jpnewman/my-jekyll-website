@@ -16,6 +16,7 @@ _vendor/
 
 # Pandoc Generated Files
 
+_cv/
 cv.html
 cv.docx
 johnpaul_newman_cv.pdf

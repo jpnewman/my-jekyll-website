@@ -2,17 +2,20 @@
 convert_app = convert
 inkscape_app = /Applications/Inkscape.app/Contents/Resources/bin/inkscape
 xelatex_app = xelatex
+pdf2htmlex_app = pdf2htmlEX
+clean_cv_html_app = ./_scripts/clean_cv_html.py
 
-.PHONY: all init init_docs gen_favicon convert_svg gen_docs build build_debug build_prod prod_upload serv serv_inc clean
+.PHONY: all init init_ruby_gems init_docs gen_favicon convert_svg gen_docs gen_html_from_pdf build build_debug build_prod prod_upload serv serv_inc clean
 
 all: serv
 
 init:
-	sudo gem install bundler
-	brew install ruby
-	brew install libxml2 libxslt libiconv
-	brew install ImageMagick
+	brew install ruby || true
+	brew install libxml2 libxslt libiconv || true
+	brew install ImageMagick || true
 
+init_ruby_gems:
+	sudo gem install bundler
 	bundle install --path _vendor/bundle
 
 init_docs:
@@ -33,13 +36,19 @@ gen_docs: convert_svg
 	$(xelatex_app) johnpaul_newman_cv.tex; \
 	cp johnpaul_newman_cv.pdf $(PWD)/johnpaul_newman_cv.pdf
 
-build: gen_favicon gen_docs
+gen_html_from_pdf: gen_docs
+	mkdir -p ./_cv; \
+	cd ./_cv/; \
+	$(pdf2htmlex_app) --embed-css 0 --embed-font 0 --embed-image 0 --embed-javascript 0 --embed-outline 0 $(PWD)/johnpaul_newman_cv.pdf _cv.html
+	$(clean_cv_html_app)
+
+build: gen_favicon gen_html_from_pdf
 	bundle exec jekyll build
 
-build_debug: clean gen_favicon gen_docs
+build_debug: clean gen_favicon gen_html_from_pdf
 	JEKYLL_LOG_LEVEL=debug bundle exec jekyll build --trace
 
-build_prod: clean gen_favicon gen_docs
+build_prod: clean gen_favicon gen_html_from_pdf
 	JEKYLL_ENV=prod bundle exec jekyll build
 
 prod_upload: build_prod
