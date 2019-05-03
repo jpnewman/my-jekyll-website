@@ -5,7 +5,7 @@ xelatex_app = xelatex
 pdftohtml_app = pdftohtml
 clean_cv_html_app = ./_scripts/clean_cv_html/clean_cv_html.py
 
-.PHONY: all init init_ruby_gems init_docs gen_favicon convert_svg gen_docs gen_html_from_pdf build build_debug build_prod prod_upload serv serv_inc clean
+.PHONY: all init init_ruby_gems init_docs gen_favicon convert_svg gen_docs gen_html_from_pdf gen_xml_from_pdf build build_debug build_prod prod_upload serv serv_inc clean
 
 all: serv
 
@@ -41,6 +41,9 @@ gen_html_from_pdf: gen_docs
 	cd ./_cv/; \
 	$(pdftohtml_app) -s -i -noframes $(PWD)/johnpaul_newman_cv.pdf
 	$(clean_cv_html_app) --file johnpaul_newman_cv.html --outfile cv.html
+
+gen_xml_from_pdf: gen_docs
+	$(pdftohtml_app) -s -i -noframes -xml -noroundcoord johnpaul_newman_cv.pdf
 
 build: gen_favicon gen_html_from_pdf
 	bundle exec jekyll build
