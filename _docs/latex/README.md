@@ -43,6 +43,20 @@ sudo tlmgr install fontawesome
 sudo tlmgr install clearsans
 ~~~
 
+## List System fonts
+
+~~~
+fc-list | grep FontAwesome
+~~~
+
+> Results
+
+~~~
+/Users/jpnewman/Library/Fonts/fontawesome-regular.ttf: FontAwesome:style=Regular
+~~~
+
+> Font name is ```FontAwesome:style=Regular```
+
 ## Generate DevOps.pdf
 
 ~~~
