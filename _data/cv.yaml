@@ -1,0 +1,240 @@
+cv:
+  doc:
+    title: John Paul Newman CV
+    subject: CV
+    author: John Paul Newman
+    keywords:
+     - CV
+  name:
+    first: John Paul
+    surname: Newman
+  titles:
+    - Senior Software Engineer
+    - DevOps
+  contacts:
+    website:
+      scheme: http://
+      domain: johnpaulnewman.com
+    linkedin: johnpaulnewman
+    github: jpnewman
+  skills:
+    - id: programming
+      name: Programming Languages
+      groups:
+        - level: 3
+          items:
+            - C#
+            - SQL
+            - Entity Framework
+        - level: 3
+          items:
+            - C
+            - C++
+            - Bash
+        - level: 3
+          items:
+            - Powershell
+            - Python
+            - Golang
+    - id: iac
+      name: Infrastructure as Code (IaC)
+      groups:
+        - level: 3
+          items:
+            - Ansible
+            - Chef
+        - level: 3
+          items:
+            - Packer
+            - Terraform
+    - id: oses
+      name: Operating Systems
+      groups:
+        - level: 3
+          items:
+            - Windows
+            - Linux (Ubuntu)
+        - level: 2
+          items:
+            - Mac OS X
+    - id: platforms
+      name: Platforms
+      groups:
+        - level: 3
+          items:
+            - AWS (EC2, S3, RDS, Lambda, Kinesis)
+        - level: 2
+          items:
+            - VMware
+            - Docker
+            - Kubernetes
+        - level: 1
+          items:
+            - Xbox 360
+            - PS3
+            - iOS
+            - Android
+    - id: cicd
+      name: CI/CD
+      groups:
+        - level: 3
+          items:
+            - Jenkins
+            - GoCD
+            - Artifactory
+        - level: 2
+          items:
+            - Octopus Deploy
+            - GitLab
+    - id: monitoring
+      name: Monitoring
+      groups:
+        - level: 2
+          items:
+            - Elastic Stack
+            - Splunk
+            - New Relic
+    - id: alerting
+      name: Alerting
+      groups:
+        - level: 1
+          items:
+          - Zabbix
+          - PagerDuty
+  projects:
+    - title: Data Pipeline
+      href: http://johnpaulnewman.com/projects/data-pipeline/
+      items:
+        - AWS Lambda (C# & Python)
+        - AWS Kinesis
+        - AWS Glue & Athena
+        - AWS EMR (Scala & PySpark)
+        - Apache Avro
+    - title: "OCR Solution - Hackathon : Winner"
+      href: http://johnpaulnewman.com/projects/papers-ocr-solution/
+      items:
+        - Python (Flask, Celery, RethinkDB)
+        - RabbitMQ
+    - title: Reporting Service
+      href: http://johnpaulnewman.com/projects/reporting-service/
+      items:
+        - C# (Entity Framework, AutoMapper)
+        - JQuery & d3.js
+    - title: Gerrit Backup Solution
+      href: http://johnpaulnewman.com/projects/gerrit-backup-solution/
+      items:
+        - Python
+        - AWS S3
+    - title: C# Dependencies Graph
+      href: http://johnpaulnewman.com/projects/csharp-dependencies-graph/
+      items:
+        - Ruby
+        - Graphviz & SVG
+        - JQuery
+    - title: Chef LWRP
+      href: http://johnpaulnewman.com/projects/chef-lwrp/
+      items:
+        - Chef
+        - Powershell
+    - title: Palm OS RSRC Extractor
+      href: http://johnpaulnewman.com/projects/palm-os-rsrc-extractor/
+      items:
+        - C++, MFC
+    - title: Adobe Photoshop Automation
+      href: http://johnpaulnewman.com/projects/adobe-photoshop-automation/
+      items:
+        - C++, COM
+    - title: Translation Memory Validation
+      href: http://johnpaulnewman.com/projects/translation-memory-validation/
+      items:
+        - Classic ASP
+        - XSLT with Javascript functions
+  qualifications:
+    - name: Certificate in C++ Programming
+      marks:
+    - name: Open University (MT262 Module)
+      marks:
+    - name: Certificate in Programming
+      marks:
+    - name: Cambridge Information Technology (Pascal & Delphi)
+      marks:
+    - name: BTEC 1st Diploma in Science & Health
+      marks: 12 Distinctions and 4 Merits
+  summary: |
+    Senior Software Engineer with Windows and Linux DevOps experience working in an Agile environment for a FinTech PCI-DSS compliant business.
+    Highly competent in Windows and Linux automation, using Chef and Ansible.
+    Experience in infrastructure automation, using Packer and Terraform, on both Amazon Web Services (AWS) and VMware. Implementation of High Availability (HA) and Disaster Recovery (DR) best practices.
+    Designed and managed Continuous Integration (CI)/Continuous Deployment (CD) tools, processes, and pipelines.
+  experience:
+    - title: Senior Software Engineer/DevOps
+      company: Wonga
+      start_date: 2012
+      end_date: Present
+      location: Ireland - England
+      summary: |
+        Senior Software Engineer with DevOps responsibilities designing, creating and implementing CI/CD tools and infrastructure within a Platform Engineering Team
+      responsibilities:
+        - Implementation and maintenance of AWS infrastructure, including EC2 instances with Active Directory servers
+        - Implementation and maintenance of all CI/CD systems, including Jenkins, Artifactory, Gerrit, Octopus Deploy, and Windows build/deploy agents
+        - Created Ansible playbooks for CI/CD servers
+        - Created HashiCorp Terraform templates to deploy AWS and VMware architecture
+        - Created HashiCorp Packer templates for AWS and VMware
+        - Supported Service Oriented Architecture (SOA) architecture applications that use NServiceBus using both MSMQ with DTC and RabbitMQ transportation layers
+        - Interim Scrum Master and Team Lead Key
+      achievements:
+        - Created Ansible roles to deploy an ELK/Elastic stack, Artifactory, Gerrit, and Jenkins servers
+        - Created a Data pipeline in Python using AWS Lambda, Kinesis, and Glue.
+        - Created a process to deploy a legacy VB6 application using Chef, Powershell, and AWS S3
+        - Developed and maintained Chef Cookbooks for CI servers
+        - Developed a RESTful Reporting Service using C#, Entity Framework (EF), JQuery and d3.js
+        - Created Powershell build and deploy scripts to replace, Ruby Rake, and MSBuild scripts, which included a DSL implemented in PowerShell for NuGet packing
+        - Developed a Ruby application to create Graphviz DOT files of Microsoft Visual Studio solution dependencies and display them via a JQuery website that allowed selection and filtering
+        - Introduced the use of NuGet, Artifactory, Octopus Deploy to manage dependencies and deployment packages
+
+    - title: Software Internationalization Engineer II
+      company: PopCap Games International
+      start_date: 2007
+      end_date: 2012
+      location: Ireland
+      summary: |
+        Worked as one of two internationalization engineers responsible for source code changes to ensure that flagship games, like PopCap’s Bejeweled, Plants vs. Zombies, Peggle, and Zuma, worked in multiple regions.
+      responsibilities:
+        - Internationalization and localization of flagship games, across multiple platforms in multiple development languages, including C++ and Objective-C
+        - Liaise with US and APAC project teams to achieve timely delivery and mutual project goals
+        - Acted as point of contact/subject matter expert for Internationalization
+      achievements:
+        - Managed multiple key projects simultaneously – liaising with multiple project stakeholders in the US and APAC
+        - Developed numerous Python, JavaScript, and VBA tools to reduce engineering time and resources
+        - Reduced art resource requirements by automating Adobe Photoshop to create Asian language Bitmap Fonts
+        - Created a script to import/export text from Photoshop files, allowing for faster translation of graphical assets
+        - Consistently took the initiative to scope and analyze new technology requirements and project impacts
+
+    - title: Software Internationalization and Build Engineer
+      company: Welocalize/Connect Global Solutions
+      start_date: 2002
+      end_date: 2007
+      location: Ireland
+      summary: |
+        Worked as lead engineer on various projects, responsible for projects and team members.
+      achievements:
+        - Received client recognition for designing, developing and implementing an online system in Classic ASP that validated Translation Memories (TMs) and ensured higher leverage
+        - Created extensive GNU and NMake makefiles
+        - Developed a tool in C++ to extract text from the Palm OS RSRC file format, enabling shorter localization cycles Software Localization Engineer
+
+    - title: Bowne Global Solutions
+      start_date: 2000
+      end_date: 2002
+      location: Ireland
+      summary:
+      achievements:
+        - Developed comprehensive functional test scripts for cutting edge mobile device, Handspring VisorPhone
+
+    - title: Software Localization Engineer and IT Network Administrator
+      company: Tek Translation
+      start_date: 1998
+      end_date: 2000
+      location: England - Ireland
+      summary:
+      achievements:
+        - Migrated Novell to Windows NT 4 and Pegasus Mail to Exchange Server
+        - Set-up and maintained Sage Line 100, a MS-DOS based accounting system

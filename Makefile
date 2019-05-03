@@ -3,9 +3,10 @@ convert_app = convert
 inkscape_app = /Applications/Inkscape.app/Contents/Resources/bin/inkscape
 xelatex_app = xelatex
 pdftohtml_app = pdftohtml
-clean_cv_html_app = ./_scripts/clean_cv_html/clean_cv_html.py
+clean_cv_html_script = ./_scripts/clean_cv_html/clean_cv_html.py
+cv_update_tex_script = ./_scripts/cv_yaml/cv_update_tex.py
 
-.PHONY: all init init_ruby_gems init_docs gen_favicon convert_svg gen_docs gen_html_from_pdf gen_xml_from_pdf build build_debug build_prod prod_upload serv serv_inc clean
+.PHONY: all init init_ruby_gems init_docs gen_favicon convert_svg cv_update_tex gen_docs gen_html_from_pdf gen_xml_from_pdf build build_debug build_prod prod_upload serv serv_inc clean
 
 all: serv
 
@@ -31,7 +32,10 @@ convert_svg:
 	# $(inkscape_app) -D -z --file=$(PWD)/_docs/inkscape/DevOps.svg --export-png=$(PWD)/_docs/latex/DevOps.png
 	$(inkscape_app) -D -z --file=$(PWD)/_docs/inkscape/DevOps.svg --export-pdf=$(PWD)/_docs/latex/DevOps.pdf --export-text-to-path --export-dpi 300
 
-gen_docs: convert_svg
+cv_update_tex:
+	$(cv_update_tex_script)
+
+gen_docs: convert_svg cv_update_tex
 	cd ./_docs/latex/; \
 	$(xelatex_app) johnpaul_newman_cv.tex; \
 	cp johnpaul_newman_cv.pdf $(PWD)/johnpaul_newman_cv.pdf
@@ -40,7 +44,7 @@ gen_html_from_pdf: gen_docs
 	mkdir -p ./_cv; \
 	cd ./_cv/; \
 	$(pdftohtml_app) -s -i -noframes $(PWD)/johnpaul_newman_cv.pdf
-	$(clean_cv_html_app) --file johnpaul_newman_cv.html --outfile cv.html
+	$(clean_cv_html_script) --file johnpaul_newman_cv.html --outfile cv.html
 
 gen_xml_from_pdf: gen_docs
 	$(pdftohtml_app) -s -i -noframes -xml -noroundcoord johnpaul_newman_cv.pdf
