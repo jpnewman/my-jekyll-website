@@ -2,8 +2,8 @@
 convert_app = convert
 inkscape_app = /Applications/Inkscape.app/Contents/Resources/bin/inkscape
 xelatex_app = xelatex
-pdf2htmlex_app = pdf2htmlEX
-clean_cv_html_app = ./_scripts/clean_cv_html.py
+pdftohtml_app = pdftohtml
+clean_cv_html_app = ./_scripts/clean_cv_html/clean_cv_html.py
 
 .PHONY: all init init_ruby_gems init_docs gen_favicon convert_svg gen_docs gen_html_from_pdf build build_debug build_prod prod_upload serv serv_inc clean
 
@@ -39,8 +39,8 @@ gen_docs: convert_svg
 gen_html_from_pdf: gen_docs
 	mkdir -p ./_cv; \
 	cd ./_cv/; \
-	$(pdf2htmlex_app) --embed-css 0 --embed-font 0 --embed-image 0 --embed-javascript 0 --embed-outline 0 $(PWD)/johnpaul_newman_cv.pdf _cv.html
-	$(clean_cv_html_app)
+	$(pdftohtml_app) -s -i -noframes $(PWD)/johnpaul_newman_cv.pdf
+	$(clean_cv_html_app) --file johnpaul_newman_cv.html --outfile cv.html
 
 build: gen_favicon gen_html_from_pdf
 	bundle exec jekyll build

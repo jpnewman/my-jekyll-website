@@ -17,6 +17,8 @@
 \usepackage{pstricks}
 
 \usepackage{fontawesome}
+\defaultfontfeatures{Ligatures={NoCommon, NoDiscretionary, NoHistoric, NoRequired, NoContextual}}
+
 \usepackage{xltxtra}
 
 \usepackage{graphicx}
@@ -411,12 +413,12 @@
   \parbox[t]{0.98\textwidth}{%
     \begin{flushleft}
     \textbf{\large #3} \\ % Location
-    \end{flushleft}
     \noindent
     {\textbf{\large #4 (#1 - #2)}} \hfill \ifblank{#5}{}{\textbf{\large #5}} \\ % Company (DateFrom - DateTo) Location
     \ifblank{#6}{}{\large #6 \\} % Description
     \ifblank{#7}{}{\textbf{\large Responsibilities: -}{\large #7}} % Responsibilities
     \ifblank{#8}{}{\textbf{\large Key Achievements: -}{\large #8}} % Key Achievements
+    \end{flushleft}
   }\\
 }
 
