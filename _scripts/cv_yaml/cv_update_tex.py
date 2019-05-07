@@ -47,11 +47,6 @@ def parse_args():
     return args
 
 
-def print_elem_by_name(elem, name):
-    if name in elem and elem[name] is not None:
-        print(elem[name].strip())
-
-
 def escape_tex(text):
     escape_chars = ['&', '#']
 
@@ -110,6 +105,77 @@ def write_tex_qualifications(out_file, qualifications):
     with open(out_file, 'w') as o:
         o.write(TEX_HEADER)
         o.write(text)
+
+
+def test_element(elem, name):
+    return name in elem and elem[name] is not None
+
+
+def get_experience_item_or_default(elem, name, default="  {}\n"):
+    if name in elem and elem[name] is not None:
+        return "  {{{0}}}\n".format(escape_tex(elem[name].strip()))
+
+    return default
+
+
+def get_experience_items_tex(items):
+    text = "  {\\begin{itemize}\n"
+
+    for i in items:
+         text += f"    \item {escape_tex(i)}\n"
+
+    text += "  \\end{itemize}\n"
+    text += "  }\n"
+
+    return text
+
+
+def get_experience_tex(experience):
+    e = experience
+
+    text = "\\begin{twenty}\n"
+    text += "\\twentyitem\n"
+    text += f"  {{{e['start_date']}}}\n"
+    text += f"  {{{e['end_date']}}}\n"
+    text += f"  {{{e['title']}}}\n"
+
+    if test_element(e, 'href'):
+        text += f"  {{\\href{{{e['href']}}}{{{e['company']}}}}}\n"
+    else:
+        text += f"  {{{e['company']}}}\n"
+
+    text += f"  {{{e['location']}}}\n"
+
+    text += get_experience_item_or_default(e, 'summary')
+
+    if test_element(e, 'responsibilities'):
+        text += get_experience_items_tex(e['responsibilities'])
+    else:
+        text += "  {}\n"
+
+    text += get_experience_items_tex(e['achievements'])
+
+    text += "\\end{twenty}\n"
+
+    text += "\n\\vspace{0.75\\baselineskip}\n"
+
+    return text
+
+
+def write_experience(out_file, experience):
+    text = ""
+
+    for e in experience:
+        text += get_experience_tex(e)
+
+    with open(out_file, 'w') as o:
+        o.write(TEX_HEADER)
+        o.write(text)
+
+
+def write_experience_files(out_dir, experience):
+    write_experience(os.path.join(out_dir, "experience_01.tex"), [experience[0]])
+    write_experience(os.path.join(out_dir, "experience_02.tex"), experience[1:])
 
 
 def write_tex_skills(out_file, skills):
@@ -177,6 +243,8 @@ def main():
 
         write_tex_skills(os.path.join(args.outDir, 'skills.tex'),
                          data['cv']['skills'])
+
+        write_experience_files(args.outDir, data['cv']['experience'])
 
 
 if __name__ == "__main__":

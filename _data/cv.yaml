@@ -166,6 +166,7 @@ cv:
   experience:
     - title: Senior Software Engineer/DevOps
       company: Wonga
+      href: https://www.wonga.com/
       start_date: 2012
       end_date: Present
       location: Ireland - England
@@ -178,7 +179,7 @@ cv:
         - Created HashiCorp Terraform templates to deploy AWS and VMware architecture
         - Created HashiCorp Packer templates for AWS and VMware
         - Supported Service Oriented Architecture (SOA) architecture applications that use NServiceBus using both MSMQ with DTC and RabbitMQ transportation layers
-        - Interim Scrum Master and Team Lead Key
+        - Interim Scrum Master and Team Lead
       achievements:
         - Created Ansible roles to deploy an ELK/Elastic stack, Artifactory, Gerrit, and Jenkins servers
         - Created a Data pipeline in Python using AWS Lambda, Kinesis, and Glue.
@@ -191,6 +192,7 @@ cv:
 
     - title: Software Internationalization Engineer II
       company: PopCap Games International
+      href: https://www.popcap.com/
       start_date: 2007
       end_date: 2012
       location: Ireland
@@ -209,6 +211,7 @@ cv:
 
     - title: Software Internationalization and Build Engineer
       company: Welocalize/Connect Global Solutions
+      href: https://www.welocalize.com/
       start_date: 2002
       end_date: 2007
       location: Ireland
@@ -217,9 +220,11 @@ cv:
       achievements:
         - Received client recognition for designing, developing and implementing an online system in Classic ASP that validated Translation Memories (TMs) and ensured higher leverage
         - Created extensive GNU and NMake makefiles
-        - Developed a tool in C++ to extract text from the Palm OS RSRC file format, enabling shorter localization cycles Software Localization Engineer
+        - Developed a tool in C++ to extract text from the Palm OS RSRC file format, enabling shorter localization cycles
 
-    - title: Bowne Global Solutions
+    - title: Software Localization Engineer
+      company: Bowne Global Solutions
+      href: https://www.lionbridge.com/
       start_date: 2000
       end_date: 2002
       location: Ireland
@@ -229,6 +234,7 @@ cv:
 
     - title: Software Localization Engineer and IT Network Administrator
       company: Tek Translation
+      href:
       start_date: 1998
       end_date: 2000
       location: England - Ireland
