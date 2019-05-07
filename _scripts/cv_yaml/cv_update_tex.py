@@ -122,7 +122,7 @@ def get_experience_items_tex(items):
     text = "  {\\begin{itemize}\n"
 
     for i in items:
-         text += f"    \item {escape_tex(i)}\n"
+         text += f"    \\item {escape_tex(i)}\n"
 
     text += "  \\end{itemize}\n"
     text += "  }\n"
@@ -187,7 +187,7 @@ def write_tex_skills(out_file, skills):
         for g in reversed(s['groups']):
             groups_text = f"{{"
             escape_group_text = [escape_tex(i) for i in g['items']]
-            groups_text += " $\\textbullet$ ".join(escape_group_text)
+            groups_text += " $\\textbullet$ ".join(escape_group_text).strip()
             groups_text += f" / {g['level']}}}"
 
             groups.append(groups_text)
