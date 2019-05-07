@@ -6,7 +6,7 @@
     "configurations": [
 
         {
-            "name": "Python: No Args",
+            "name": "cv_update_tex: No Args",
             "type": "python",
             "request": "launch",
             "program": "${workspaceFolder}/cv_update_tex.py",

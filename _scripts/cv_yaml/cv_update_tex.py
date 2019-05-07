@@ -4,10 +4,9 @@ import yaml
 import argparse
 import os
 
-SCRIPT_PATH = os.path.dirname(os.path.realpath(__file__))
-
 from string import Template
 
+SCRIPT_PATH = os.path.dirname(os.path.realpath(__file__))
 
 TEX_HEADER = """% DO EDIT THIS FILE DIRECTLY!
 % This file is generated from data in YAML file ../../../_data/cv.yaml via 'make cv_update_tex'
