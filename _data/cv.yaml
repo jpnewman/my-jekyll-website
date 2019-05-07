@@ -151,15 +151,13 @@ cv:
         - XSLT with Javascript functions
   qualifications:
     - name: Certificate in C++ Programming
-      marks:
-    - name: Open University (MT262 Module)
-      marks:
+      desc: Open University (MT262 Module)
     - name: Certificate in Programming
-      marks:
-    - name: Cambridge Information Technology (Pascal & Delphi)
-      marks:
+      desc: |
+        Cambridge Information Technology
+        (Pascal & Delphi)
     - name: BTEC 1st Diploma in Science & Health
-      marks: 12 Distinctions and 4 Merits
+      desc: 12 Distinctions and 4 Merits
   summary: |
     Senior Software Engineer with Windows and Linux DevOps experience working in an Agile environment for a FinTech PCI-DSS compliant business.
     Highly competent in Windows and Linux automation, using Chef and Ansible.

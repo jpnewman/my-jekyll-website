@@ -58,6 +58,8 @@ def escape_tex(text):
     for c in escape_chars:
         text = text.replace(c, f"\\{c}")
 
+    text = text.strip().replace('\n', ' \\\\\n')
+
     return text
 
 
@@ -89,6 +91,43 @@ def write_tex_projects(out_file, projects):
         text += "\\end{itemize}\n"
 
     text += "}\n"
+
+    with open(out_file, 'w') as o:
+        o.write(TEX_HEADER)
+        o.write(text)
+
+
+def write_tex_qualifications(out_file, qualifications):
+    text = "\\qualifications{\n"
+
+    for q in qualifications:
+        text += apply_tex_template("\\textbf{$NAME}\\\\\\textsc{$DESC\\vspace{1.25mm}} \\\\\n",
+                                   {"NAME": escape_tex(q['name']),
+                                    "DESC": escape_tex(q['desc'])})
+
+    text += "}\n"
+
+    with open(out_file, 'w') as o:
+        o.write(TEX_HEADER)
+        o.write(text)
+
+
+def write_tex_skills(out_file, skills):
+    text = ""
+
+    for s in skills:
+        text += f"\\{s['id']}{{"
+        groups = []
+        for g in reversed(s['groups']):
+            groups_text = f"{{"
+            escape_group_text = [escape_tex(i) for i in g['items']]
+            groups_text += " $\\textbullet$ ".join(escape_group_text)
+            groups_text += f" / {g['level']}}}"
+
+            groups.append(groups_text)
+
+        text += ", ".join(groups)
+        text += f"}}\n\n"
 
     with open(out_file, 'w') as o:
         o.write(TEX_HEADER)
@@ -132,6 +171,12 @@ def main():
 
         write_tex_projects(os.path.join(args.outDir, 'projects.tex'),
                            data['cv']['projects'])
+
+        write_tex_qualifications(os.path.join(args.outDir, 'qualifications.tex'),
+                                 data['cv']['qualifications'])
+
+        write_tex_skills(os.path.join(args.outDir, 'skills.tex'),
+                         data['cv']['skills'])
 
 
 if __name__ == "__main__":
