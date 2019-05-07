@@ -11,6 +11,13 @@
             "request": "launch",
             "program": "${workspaceFolder}/cv_update_tex.py",
             "console": "integratedTerminal"
-        }
+        },
+        {
+          "name": "cv_update_markdown: No Args",
+          "type": "python",
+          "request": "launch",
+          "program": "${workspaceFolder}/cv_update_markdown.py",
+          "console": "integratedTerminal"
+      }
     ]
 }

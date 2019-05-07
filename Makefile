@@ -5,8 +5,9 @@ xelatex_app = xelatex
 pdftohtml_app = pdftohtml
 clean_cv_html_script = ./_scripts/clean_cv_html/clean_cv_html.py
 cv_update_tex_script = ./_scripts/cv_yaml/cv_update_tex.py
+cv_update_markdown_script = ./_scripts/cv_yaml/cv_update_markdown.py
 
-.PHONY: all init init_ruby_gems init_docs gen_favicon convert_svg cv_update_tex gen_docs gen_html_from_pdf gen_xml_from_pdf build build_debug build_prod prod_upload serv serv_inc clean
+.PHONY: all init init_ruby_gems init_docs gen_favicon convert_svg cv_update_tex cv_update_markdown gen_docs gen_html_from_pdf gen_xml_from_pdf build build_debug build_prod prod_upload serv serv_inc clean
 
 all: serv
 
@@ -35,7 +36,10 @@ convert_svg:
 cv_update_tex:
 	$(cv_update_tex_script)
 
-gen_docs: convert_svg cv_update_tex
+cv_update_markdown:
+	$(cv_update_markdown_script)
+
+gen_docs: convert_svg cv_update_tex cv_update_markdown
 	cd ./_docs/latex/; \
 	$(xelatex_app) johnpaul_newman_cv.tex; \
 	cp johnpaul_newman_cv.pdf $(PWD)/johnpaul_newman_cv.pdf
@@ -49,13 +53,13 @@ gen_html_from_pdf: gen_docs
 gen_xml_from_pdf: gen_docs
 	$(pdftohtml_app) -s -i -noframes -xml -noroundcoord johnpaul_newman_cv.pdf
 
-build: gen_favicon gen_html_from_pdf
+build: gen_favicon gen_docs
 	bundle exec jekyll build
 
-build_debug: clean gen_favicon gen_html_from_pdf
+build_debug: clean gen_favicon gen_docs
 	JEKYLL_LOG_LEVEL=debug bundle exec jekyll build --trace
 
-build_prod: clean gen_favicon gen_html_from_pdf
+build_prod: clean gen_favicon gen_docs
 	JEKYLL_ENV=prod bundle exec jekyll build
 
 prod_upload: build_prod
