@@ -156,7 +156,7 @@ def get_experience_tex(experience):
 
     text += "\\end{twenty}\n"
 
-    text += "\n\\vspace{0.75\\baselineskip}\n"
+    text += "\n\\vspace{0.25\\baselineskip}\n"
 
     return text
 
