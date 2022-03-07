@@ -1,5 +1,4 @@
-
-# DevOps graphic for CV.
+# DevOps graphic for CV
 
 Based On: <https://logosbynick.com/inkscape-infographic-template/>
 
@@ -9,18 +8,18 @@ Based On: <https://logosbynick.com/inkscape-infographic-template/>
 
 ## Convert to PDF
 
-~~~
-/Applications/Inkscape.app/Contents/Resources/bin/inkscape -D -z --file=$(PWD)/DevOps.svg --export-pdf=$(PWD)/DevOps.pdf --export-dpi 300 --export-latex
-~~~
+```bash
+/Applications/Inkscape.app/Contents/MacOS/inkscape $(PWD)/DevOps.svg --export-filename=$(PWD)/DevOps.pdf --export-type="pdf" --export-dpi 300 --export-latex
+```
 
-> Used for LaTex version of CV.
+> Used for LaTex version of CV
 
-~~~
-/Applications/Inkscape.app/Contents/Resources/bin/inkscape -D -z --file=$(PWD)/DevOps.svg --export-pdf=$(PWD)/../latex/DevOps.pdf --export-text-to-path --export-dpi 300
-~~~
+```bash
+/Applications/Inkscape.app/Contents/MacOS/inkscape $(PWD)/DevOps.svg --export-filename=$(PWD)/../latex/DevOps.pdf --export-type="pdf" --export-text-to-path --export-dpi 300
+```
 
 ## Convert to PNG
 
-~~~
-/Applications/Inkscape.app/Contents/Resources/bin/inkscape -D -z --file=$(PWD)/DevOps.svg --export-png=$(PWD)/../latex/DevOps.png
-~~~
+```bash
+/Applications/Inkscape.app/Contents/MacOS/inkscape $(PWD)/DevOps.svg --export-png=$(PWD)/../latex/DevOps.png
+```

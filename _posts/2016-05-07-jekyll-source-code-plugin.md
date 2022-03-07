@@ -23,7 +23,7 @@ I created the following Jekyll plugins to add support for code blocks with downl
 
 Place the file in a "_code" post relative folder and the following in the post Front Matter.
 
-~~~
+```yaml
 source_codes:
   - file: ../_code/source_code.rb
     language: ruby
@@ -34,7 +34,7 @@ source_codes:
   - file: ../_code/redcarpet-custom.rb
     language: ruby
     title: redcarpet-custom.rb
-~~~
+```
 
 {% source_code ../_plugins/source_code.rb %}
 

@@ -2,7 +2,7 @@
 
 ## Setup
 
-~~~
+```bash
 sudo gem install bundler
 
 # bundle config build.nokogiri --use-system-libraries
@@ -23,103 +23,103 @@ bundle config build.nokogiri \
 brew install ImageMagick
 
 bundle install --path _vendor/bundle
-~~~
+```
 
 ## Set RVM
 
 - <https://usabilityetc.com/articles/ruby-on-mac-os-x-with-rvm/>
 - <https://rvm.io/rvm/install>
 
-~~~
+```bash
 brew install gnupg
-~~~
+```
 
-~~~
+```bash
 curl -sSL https://rvm.io/mpapis.asc | gpg --import -
 curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
-~~~
+```
 
-~~~
+```bash
 curl -sSL https://get.rvm.io | bash -s stable --ruby
-~~~
+```
 
-~~~
+```bash
 rvm install 2.5.1
-~~~
+```
 
 > Restart the shell.
 
 ## Set Environment
 
-~~~
+```bash
 rvm use ruby-2.5.1
-~~~
+```
 
 ## Generate CV PDF
 
 - [InkScape](_docs/inkscape)
 - [LaTex](_docs/latex)
 
-~~~
+```bash
 make gen_docs
-~~~
+```
 
 ## Serve Blog, generate pages
 
-~~~
+```bash
 bundle exec jekyll serve
-~~~
+```
 
-# Serve Blog, watch
+## Serve Blog, watch
 
-~~~
+```bash
 bundle exec jekyll serve --watch
-~~~
+```
 
 ## Run without generating
 
-~~~
+```bash
 cd _site
 ruby -run -e httpd . -p 4000
 
 python -m SimpleHTTPServer 4000
-~~~
+```
 
-# Build, without serving
+## Build, without serving
 
-~~~
+```bash
 make build
-~~~
+```
 
-# Build, debug logging
+## Build, debug logging
 
-~~~
+```bash
 make build_debug
-~~~
+```
 
-# Build, debug and trace
+## Build, debug and trace
 
-~~~
+```bash
 make build_debug
-~~~
+```
 
-# Build, PROD
+## Build, PROD
 
-~~~
+```bash
 make build_prod
-~~~
+```
 
-# Clean
+## Clean
 
-~~~
+```bash
 make clean
-~~~
+```
 
 ## Open site
 
-~~~
+```bash
 open http://127.0.0.1:4000
-~~~
+```
 
 [http://127.0.0.1:4000/]()
 
@@ -129,6 +129,6 @@ open http://127.0.0.1:4000
 
 [https://github.com/jekyll/jekyll-compose]()
 
-~~~
+```bash
 bundle exec jekyll post "XSLT functions with Javascript"
-~~~
+```
