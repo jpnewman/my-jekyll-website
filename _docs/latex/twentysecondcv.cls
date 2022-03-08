@@ -99,6 +99,7 @@
 \definecolor{linkedin}{HTML}{0085AE}
 \definecolor{test}{HTML}{0077be}
 \definecolor{yt}{HTML}{c71610}
+\definecolor{github}{HTML}{171515}
 
 \ifdefined\@cv@print
   \colorlet{green}{gray}
@@ -161,6 +162,10 @@
 \newcommand*\icon[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=1pt, fill=mainblue,mainblue,text=white] (char) {#1};}}
 
 % Command for printing skill progress bars
+\newcommand\skillbullet{
+  $\bullet$\
+}
+
 \newcommand\skillitems[1]{
     \foreach [count=\i] \x in {#1}{
       \footnotesize{\x}
@@ -254,41 +259,41 @@
       \ifthenelse{\equal{\cvnumberphone}{}}{}{
           {$
               \begin{array}{l}
-              \hspace{4mm} \Huge \textnormal{\faMobile}
+              \hspace{4mm} \textnormal{\huge\faMobile}
               \end{array}
               $}
-            & \cvnumberphone\\}
-
+            & \cvnumberphone \\
+          }
       \ifthenelse{\equal{\href{\cvsite}{\cvsite}}{}}{}{
             {$
               \begin{array}{l}
-              \hspace{-1.8mm} \huge \textnormal{\textcolor{test}{\faGlobe}}
+              \hspace{-1.8mm} \textnormal{\huge\textcolor{test}{\faGlobe}}
               \end{array}
               $}
-            & \href{http://\cvsite}{\cvsite} \\}
+            & \href{http://\cvsite}{\cvsite} \\
+          }
       \ifthenelse{\equal{\cvmail}{}}{}{
             {$
               \begin{array}{l}
-              \hspace{-2.5mm} \huge \textnormal{\textcolor{yt}{\faEnvelopeO}}
+              \hspace{-2.5mm} \textnormal{\huge\textcolor{yt}{\faEnvelopeO}}
               \end{array}
               $}
-            & \href{mailto:\cvmail}{\cvmail} \\}
-
+            & \href{mailto:\cvmail}{\cvmail} \\
+          }
        \ifthenelse{\equal{\cvlinkedin}{}}{}{
             {$
               \begin{array}{l}
-              \hspace{-1.6mm} \huge \textnormal{\textcolor{linkedin}{\faLinkedin}}
+              \hspace{-1.6mm} \textnormal{\huge\textcolor{linkedin}{\faLinkedin}}
               \end{array}
               $} & \href{https://www.linkedin.com\cvlinkedin}{\cvlinkedin} \\
             }
         \ifthenelse{\equal{\cvgithub}{}}{}{
             {$
               \begin{array}{l}
-              \hspace{-1.5mm} \huge \textnormal{\faGithub}
+              \hspace{-1.5mm} \textnormal{\huge\textcolor{github}\faGithub}
               \end{array}
               $} & \href{https://www.github.com/\cvgithub}{\cvgithub} \\
             }
-
     \end{tabular}
 
     %------------------------------------------------
