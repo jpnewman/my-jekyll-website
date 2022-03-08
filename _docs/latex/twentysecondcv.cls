@@ -35,7 +35,7 @@
 \RequirePackage{parskip}
 
 \usepackage{enumitem}
-\setlist[itemize]{leftmargin=*}
+\setlist[itemize]{leftmargin=*, itemsep=1pt, topsep=5pt}
 
 \RequirePackage[hidelinks]{hyperref}
 \hypersetup{
@@ -162,11 +162,10 @@
 
 % Command for printing skill progress bars
 \newcommand\skillitems[1]{
-  \begin{tikzpicture}
-    \foreach [count=\i] \x/\y in {#1}{
-      \node [right] at (0,\i/2) {\x};%
+    \foreach [count=\i] \x in {#1}{
+      \footnotesize{\x}
+      \vspace{2pt} \\
     }
-  \end{tikzpicture}
 }
 
 \newcommand\programming[1]{
@@ -213,13 +212,13 @@
 
 \newcommand\projects[1]{
   \renewcommand{\projects}{
-    {#1}
+    \footnotesize{#1}
   }
 }
 
 \newcommand\qualifications[1]{
   \renewcommand{\qualifications}{
-    {#1}
+    \footnotesize{#1}
   }
 }
 
@@ -229,7 +228,7 @@
 
 \newcommand{\makeprofile}{
   \begin{tikzpicture}[remember picture,overlay]
-      \node [rectangle, fill=sidecolor, anchor=north, minimum width=9cm, minimum height=\paperheight+1cm] (box) at (-5cm,0.5cm){};
+    \footnotesize\node [rectangle, fill=sidecolor, anchor=north, minimum width=9cm, minimum height=\paperheight+1cm] (box) at (-5cm,0.5cm){};
   \end{tikzpicture}
 
   %------------------------------------------------
@@ -245,13 +244,13 @@
 
     %------------------------------------------------
 
-    {\Large\color{black!80}\cvjobtitle}
+    {\large\color{black!80}\cvjobtitle}
 
     %------------------------------------------------
 
     \vspace{4mm}
     \renewcommand{\arraystretch}{2}
-    \begin{tabular}{p{1cm} @{\hskip 0.5cm}p{5cm}}
+    \begin{tabular}{p{0.5cm} @{\hskip 0.25cm}p{5cm}}
       \ifthenelse{\equal{\cvnumberphone}{}}{}{
           {$
               \begin{array}{l}
@@ -263,14 +262,14 @@
       \ifthenelse{\equal{\href{\cvsite}{\cvsite}}{}}{}{
             {$
               \begin{array}{l}
-              \hspace{2.8mm} \huge \textnormal{\textcolor{test}{\faGlobe}}
+              \hspace{-1.8mm} \huge \textnormal{\textcolor{test}{\faGlobe}}
               \end{array}
               $}
             & \href{http://\cvsite}{\cvsite} \\}
       \ifthenelse{\equal{\cvmail}{}}{}{
             {$
               \begin{array}{l}
-              \hspace{2.5mm} \huge \textnormal{\textcolor{yt}{\faEnvelopeO}}
+              \hspace{-2.5mm} \huge \textnormal{\textcolor{yt}{\faEnvelopeO}}
               \end{array}
               $}
             & \href{mailto:\cvmail}{\cvmail} \\}
@@ -278,14 +277,14 @@
        \ifthenelse{\equal{\cvlinkedin}{}}{}{
             {$
               \begin{array}{l}
-              \hspace{3mm} \huge \textnormal{\textcolor{linkedin}{\faLinkedin}}
+              \hspace{-1.6mm} \huge \textnormal{\textcolor{linkedin}{\faLinkedin}}
               \end{array}
               $} & \href{https://www.linkedin.com\cvlinkedin}{\cvlinkedin} \\
             }
         \ifthenelse{\equal{\cvgithub}{}}{}{
             {$
               \begin{array}{l}
-              \hspace{3mm} \huge \textnormal{\faGithub}
+              \hspace{-1.5mm} \huge \textnormal{\faGithub}
               \end{array}
               $} & \href{https://www.github.com/\cvgithub}{\cvgithub} \\
             }
@@ -294,31 +293,25 @@
 
     %------------------------------------------------
     \vspace{2.5mm}
-    \profilesection{Skills}{4cm}
+    \profilesection{Skills}{3cm}
 
     \skills
 
     %------------------------------------------------
 
-    {\large \textbf{Programming Languages}} \\
+    {\small \textbf{Programming Languages}} \\
     \programming \\
-    \\
-    {\large \textbf{Infrastructure  as Code (IaC)}} \\
+    {\small \textbf{Infrastructure as Code (IaC)}} \\
     \iac \\
-    \\
-    {\large \textbf{Operating Systems}} \\
+    {\small \textbf{Operating Systems}} \\
     \oses \\
-    \\
-    {\large \textbf{Platforms}} \\
+    {\small \textbf{Platforms}} \\
     \platforms \\
-    \\
-    {\large \textbf{CI/CD}} \\
+    {\small \textbf{CI/CD}} \\
     \cicd \\
-    \\
-    {\large \textbf{Monitoring}} \\
+    {\small \textbf{Monitoring}} \\
     \monitoring \\
-    \\
-    {\large \textbf{Alerting}} \\
+    {\small \textbf{Alerting}} \\
     \alerting
 
   \end{textblock}
@@ -326,7 +319,7 @@
 
 \newcommand{\makeprofiletwo}{
   \begin{tikzpicture}[remember picture,overlay]
-    \node [rectangle, fill=sidecolor, anchor=north, minimum width=9cm, minimum height=\paperheight+1cm] (box) at (-5cm,0.5cm){};
+    \footnotesize\node [rectangle, fill=sidecolor, anchor=north, minimum width=9cm, minimum height=\paperheight+1cm] (box) at (-5cm,0.5cm){};
   \end{tikzpicture}
 
   \begin{textblock}{6}(0.5, 0.2)
@@ -335,14 +328,14 @@
     {\Huge\color{pblue}\cvname}
 
     \vspace{2mm}
-    {\Large\color{black!80}\cvjobtitle}
+    {\large\color{black!80}\cvjobtitle}
 
-    \profilesection{Projects}{32mm}
+    \profilesection{Projects}{21mm}
 
     \projects
 
-    \vspace{8.5mm}
-    \profilesection{Qualifications}{14mm}
+    \vspace{50pt}
+    \profilesection{Qualifications}{3mm}
 
     \qualifications
 
@@ -371,12 +364,12 @@
     \LARGE\headingfont\color{headercolor}%
     #1%
   }
-  \par\vspace{\parskip}
+  \vspace{-12pt}
 }
 
 \renewcommand{\subsection}[1]{
   \par\vspace{.5\parskip}{%
-    \Large\headingfont\color{headercolor} #1%
+    \small\headingfont\color{headercolor} #1%
   }
   \par\vspace{.25\parskip}%
 }
@@ -390,9 +383,9 @@
 \newcommand{\summary}[1]{%
   \parbox[t]{0.98\textwidth}{%
     \begin{flushleft}
-    \ifblank{#1}{}\textnormal{\large #1} \\%
+    \ifblank{#1}{}\small{#1} \\%
     \end{flushleft}
-  }\\
+  }
 }
 
 %----------------------------------------------------------------------------------------
@@ -409,17 +402,18 @@
 }
 
 %\twentyitem{<date from>}{<date to>}{<title>}{<company>}{<location>}{<description>}{<responsibilities>}{<key achievements>}
-\newcommand{\twentyitem}[8]{%
+\newcommand{\twentyitem}[9][4pt]{%
   \parbox[t]{0.98\textwidth}{%
     \begin{flushleft}
-    \textbf{\large #3} \\ % Location
+    \vspace{#1}
+    \textbf{\large #4} \\ % Location
     \noindent
-    {\textbf{\large #4 (#1 - #2)}} \hfill \ifblank{#5}{}{\textbf{\large #5}} \\ % Company (DateFrom - DateTo) Location
-    \ifblank{#6}{}{\large #6 \\} % Description
-    \ifblank{#7}{}{\textbf{\large Responsibilities: -}{\large #7}} % Responsibilities
-    \ifblank{#8}{}{\textbf{\large Key Achievements: -}{\large #8}} % Key Achievements
+    {\textbf{\normalsize #5 (#2 - #3)}} \hfill \ifblank{#6}{}{\textbf{\normalsize #6}} \\ % Company (DateFrom - DateTo) Location
+    \vspace{5pt}\ifblank{#7}{}{\small #7 \vspace{5pt} \\} % Description
+    \ifblank{#8}{}{\textbf{\normalsize Responsibilities: -}{\small #8 \vspace{5pt}}} % Responsibilities
+    \ifblank{#9}{}{\textbf{\normalsize Key Achievements: -}{\small #9}} % Key Achievements
     \end{flushleft}
-  }\\
+  }
 }
 
 %----------------------------------------------------------------------------------------
@@ -438,14 +432,14 @@
 \newcommand{\twentyitemshort}[2]{%
   #1&\parbox[t]{0.98\textwidth}{%
     #2%
-  }\\
+  }
 }
 
 %----------------------------------------------------------------------------------------
 %   MARGINS AND LINKS
 %----------------------------------------------------------------------------------------
 
-\RequirePackage[left=7.6cm,top=0.1cm,right=1cm,bottom=0.1cm,nohead,nofoot]{geometry}
+\RequirePackage[left=6cm,top=0.1cm,right=1cm,bottom=0.1cm,nohead,nofoot]{geometry}
 
 
 \usepackage{smartdiagram}
