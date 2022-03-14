@@ -54,14 +54,14 @@
   \usepackage{letltxmacro}
   \setlength{\XeTeXLinkMargin}{1pt}
   \LetLtxMacro\SavedIncludeGraphics\includegraphics
-  \def\includegraphics#1#{% #1 catches optional stuff (star/opt. arg.)
-    \IncludeGraphicsAux{#1}%
-  }%
-  \newcommand*{\IncludeGraphicsAux}[2]{%
-    \XeTeXLinkBox{%
-      \SavedIncludeGraphics#1{#2}%
-    }%
-  }%
+  \def\includegraphics#1#{ % #1 catches optional stuff (star/opt. arg.)
+    \IncludeGraphicsAux{#1}
+  }
+  \newcommand*{\IncludeGraphicsAux}[2]{
+    \XeTeXLinkBox{
+      \SavedIncludeGraphics#1{#2}
+    }
+  }
 \fi
 
 %----------------------------------------------------------------------------------------
@@ -97,7 +97,7 @@
 \definecolor{materialred}{HTML}{FF4436}
 \definecolor{materialorange}{HTML}{FF5722}
 \definecolor{linkedin}{HTML}{0085AE}
-\definecolor{test}{HTML}{0077be}
+  \definecolor{site}{HTML}{0077be}
 \definecolor{yt}{HTML}{c71610}
 \definecolor{github}{HTML}{171515}
 
@@ -255,7 +255,7 @@
 
     \vspace{4mm}
     \renewcommand{\arraystretch}{2}
-    \begin{tabular}{p{0.5cm} @{\hskip 0.25cm}p{5cm}}
+    \begin{tabular}{p{0.5cm} @{\hskip 0.5cm}p{5cm}}
       \ifthenelse{\equal{\cvnumberphone}{}}{}{
           {$
               \begin{array}{l}
@@ -267,7 +267,7 @@
       \ifthenelse{\equal{\href{\cvsite}{\cvsite}}{}}{}{
             {$
               \begin{array}{l}
-              \hspace{-1.8mm} \textnormal{\huge\textcolor{test}{\faGlobe}}
+              \hspace{-1.8mm} \textnormal{\huge\textcolor{site}{\faGlobe}}
               \end{array}
               $}
             & \href{http://\cvsite}{\cvsite} \\
@@ -285,7 +285,7 @@
               \begin{array}{l}
               \hspace{-1.6mm} \textnormal{\huge\textcolor{linkedin}{\faLinkedin}}
               \end{array}
-              $} & \href{https://www.linkedin.com\cvlinkedin}{\cvlinkedin} \\
+              $} & \href{https://www.linkedin.com/in/\cvlinkedin}{\cvlinkedin} \\
             }
         \ifthenelse{\equal{\cvgithub}{}}{}{
             {$
@@ -352,31 +352,30 @@
 %----------------------------------------------------------------------------------------
 
 % Command to create the rounded boxes around the first three letters of section titles
-% \newcommand*\round[2]{%
-%   \tikz[baseline=(char.base)]\node[anchor=north west, draw,rectangle, rounded corners, inner sep=1.6pt, minimum size=5.5mm, text height=3.6mm, fill=#2,#2,text=white](char){#1};%
+% \newcommand*\round[2]{
+%   \tikz[baseline=(char.base)]\node[anchor=north west, draw,rectangle, rounded corners, inner sep=1.6pt, minimum size=5.5mm, text height=3.6mm, fill=#2,#2,text=white](char){#1};
 % }
 
-\def\@sectioncolor#1#2#3{%
-  {%
-    \color{pblue} #1#2#3%
-  }%
+\def\@sectioncolor#1#2#3{
+  {
+    \color{pblue} #1#2#3
+  }
 }
 
 
 \renewcommand{\section}[1]{
   \par\vspace{\parskip}
-  {%
-    \LARGE\headingfont\color{headercolor}%
-    #1%
+  {
+    \LARGE\headingfont\color{headercolor}#1
   }
   \vspace{-12pt}
 }
 
 \renewcommand{\subsection}[1]{
-  \par\vspace{.5\parskip}{%
-    \small\headingfont\color{headercolor} #1%
+  \par\vspace{.5\parskip}{
+    \small\headingfont\color{headercolor}#1
   }
-  \par\vspace{.25\parskip}%
+  \par\vspace{.25\parskip}
 }
 
 \pagestyle{empty}
@@ -385,10 +384,10 @@
 %   Summary
 %----------------------------------------------------------------------------------------
 
-\newcommand{\summary}[1]{%
-  \parbox[t]{0.98\textwidth}{%
+\newcommand{\summary}[1]{
+  \parbox[t]{0.98\textwidth}{
     \begin{flushleft}
-    \ifblank{#1}{}\small{#1} \\%
+      \ifblank{#1}{}\small{#1}
     \end{flushleft}
   }
 }
@@ -407,8 +406,8 @@
 }
 
 %\twentyitem{<date from>}{<date to>}{<title>}{<company>}{<location>}{<description>}{<responsibilities>}{<key achievements>}
-\newcommand{\twentyitem}[9][4pt]{%
-  \parbox[t]{0.98\textwidth}{%
+\newcommand{\twentyitem}[9][30pt]{
+  \parbox[t]{0.98\textwidth}{
     \begin{flushleft}
     \vspace{#1}
     \textbf{\large #4} \\ % Location
@@ -428,15 +427,15 @@
 \setlength{\tabcolsep}{0pt}
 
 % New environment for the small list
-\newenvironment{twentyshort}{%
+\newenvironment{twentyshort}{
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}
-}{%
+}{
   \end{tabular*}
 }
 
-\newcommand{\twentyitemshort}[2]{%
-  #1&\parbox[t]{0.98\textwidth}{%
-    #2%
+\newcommand{\twentyitemshort}[2]{
+  #1&\parbox[t]{0.98\textwidth}{
+    #2
   }
 }
 
