@@ -339,7 +339,7 @@
 
     \projects
 
-    \vspace{50pt}
+    \vspace{28pt}
     \profilesection{Qualifications}{3mm}
 
     \qualifications
@@ -406,7 +406,7 @@
 }
 
 %\twentyitem{<date from>}{<date to>}{<title>}{<company>}{<location>}{<description>}{<responsibilities>}{<key achievements>}
-\newcommand{\twentyitem}[9][30pt]{
+\newcommand{\twentyitem}[9][0pt]{
   \parbox[t]{0.98\textwidth}{
     \begin{flushleft}
     \vspace{#1}
