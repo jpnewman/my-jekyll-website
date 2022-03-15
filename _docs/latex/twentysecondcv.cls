@@ -259,7 +259,7 @@
       \ifthenelse{\equal{\cvnumberphone}{}}{}{
           {$
               \begin{array}{l}
-              \hspace{4mm} \textnormal{\huge\faMobile}
+              \hspace{-0.2mm} \textnormal{\huge\faMobile}
               \end{array}
               $}
             & \cvnumberphone \\
