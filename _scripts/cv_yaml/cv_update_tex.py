@@ -95,7 +95,7 @@ def write_tex_qualifications(out_file, qualifications):
     text = "\\qualifications{\n"
 
     for q in qualifications:
-        text += apply_tex_template("\\textbf{$NAME}\\\\\\textsc{$DESC\\vspace{1.25mm}} \\\\\n",
+        text += apply_tex_template("\\textbf{$NAME}\\\\\\textnormal{$DESC\\vspace{1.25mm}} \\\\\n",
                                    {"NAME": escape_tex(q['name']),
                                     "DESC": escape_tex(q['desc'])})
 
