@@ -406,14 +406,13 @@
   \end{tabular*}
 }
 
-%\twentyitem{<date from>}{<date to>}{<title>}{<company>}{<location>}{<description>}{<responsibilities>}{<key achievements>}
-\newcommand{\twentyitem}[9][0pt]{%
+%\twentyitem{<date from>}{<date to>}{<title>}{<icon pdf file>}{<company>}{<location>}{<description>}{<responsibilities>}{<key achievements>}
+\newcommand{\twentyitem}[9]{%
   \parbox[t]{0.98\textwidth}{%
     \begin{flushleft}
-    \vspace{#1}
-    \textbf{\large #4} \\ % Location
+    \textbf{\large #3} \hfill \ifblank{#4}{}{\includegraphics[scale=0.32]{#4}} \\ %vTitle Icons
     \noindent
-    {\textbf{\normalsize #5 (#2 - #3)}} \hfill \ifblank{#6}{}{\textbf{\normalsize #6}} \\ % Company (DateFrom - DateTo) Location
+    {\textbf{\normalsize #5 (#1 - #2)}} \hfill \ifblank{#6}{}{\textbf{\normalsize #6}} \\ % Company (DateFrom - DateTo) Location
     \vspace{5pt}\ifblank{#7}{}{\small #7 \vspace{5pt} \\} % Description
     \ifblank{#8}{}{\textbf{\normalsize Responsibilities: -}{\small #8 \vspace{5pt}}} % Responsibilities
     \ifblank{#9}{}{\textbf{\normalsize Key Achievements: -}{\small #9}} % Key Achievements
