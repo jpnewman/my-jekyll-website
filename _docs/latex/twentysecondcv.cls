@@ -414,8 +414,8 @@
     \noindent
     {\textbf{\normalsize #4} {\small #1}} \hfill \ifblank{#5}{}{\textbf{\normalsize #5}} \\ % Company (DateFrom - DateTo) Location
     \vspace{5pt}\ifblank{#6}{}{\small #6 \vspace{5pt} \\} % Description
-    \ifblank{#7}{}{\textbf{\normalsize Responsibilities: -}{\small #7 \vspace{5pt}}} % Responsibilities
-    \ifblank{#8}{}{\textbf{\normalsize Key Achievements: -}{\small #8}} % Key Achievements
+    \ifblank{#7}{}{\textbf{\small Responsibilities: -}{\footnotesize #7 \vspace{5pt}}} % Responsibilities
+    \ifblank{#8}{}{\textbf{\small Key Achievements: -}{\footnotesize #8}} % Key Achievements
     \end{flushleft}
   }
 }
