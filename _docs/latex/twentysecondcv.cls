@@ -37,6 +37,8 @@
 \usepackage{enumitem}
 \setlist[itemize]{leftmargin=*, itemsep=1pt, topsep=5pt}
 
+\usepackage{relsize}
+
 \RequirePackage[hidelinks]{hyperref}
 \hypersetup{
     pdftitle={},
@@ -168,7 +170,7 @@
 
 \newcommand\skillitems[1]{
     \foreach [count=\i] \x in {#1}{
-      \footnotesize{\x}
+      \small\smaller{\x}
       \vspace{2pt} \\
     }
 }
@@ -217,13 +219,13 @@
 
 \newcommand\projects[1]{
   \renewcommand{\projects}{
-    \footnotesize{#1}
+    \small\smaller{#1}
   }
 }
 
 \newcommand\qualifications[1]{
   \renewcommand{\qualifications}{
-    \footnotesize{#1}
+    \small\smaller{#1}
   }
 }
 
@@ -233,7 +235,7 @@
 
 \newcommand{\makeprofile}{
   \begin{tikzpicture}[remember picture,overlay]
-    \footnotesize\node [rectangle, fill=sidecolor, anchor=north, minimum width=9cm, minimum height=\paperheight+1cm] (box) at (-5cm,0.5cm){};
+    \small\smaller\node [rectangle, fill=sidecolor, anchor=north, minimum width=9cm, minimum height=\paperheight+1cm] (box) at (-5cm,0.5cm){};
   \end{tikzpicture}
 
   %------------------------------------------------
@@ -324,7 +326,7 @@
 
 \newcommand{\makeprofiletwo}{
   \begin{tikzpicture}[remember picture,overlay]
-    \footnotesize\node [rectangle, fill=sidecolor, anchor=north, minimum width=9cm, minimum height=\paperheight+1cm] (box) at (-5cm,0.5cm){};
+    \small\smaller\node [rectangle, fill=sidecolor, anchor=north, minimum width=9cm, minimum height=\paperheight+1cm] (box) at (-5cm,0.5cm){};
   \end{tikzpicture}
 
   \begin{textblock}{6}(0.5, 0.2)
@@ -414,8 +416,8 @@
     \noindent
     {\textbf{\normalsize #4} {\small #1}} \hfill \ifblank{#5}{}{\textbf{\normalsize #5}} \\ % Company (DateFrom - DateTo) Location
     \vspace{5pt}\ifblank{#6}{}{\small #6 \vspace{5pt} \\} % Description
-    \ifblank{#7}{}{\textbf{\small Responsibilities: -}{\footnotesize #7 \vspace{5pt}}} % Responsibilities
-    \ifblank{#8}{}{\textbf{\small Key Achievements: -}{\footnotesize #8}} % Key Achievements
+    \ifblank{#7}{}{\textbf{\small Responsibilities: -}{\small\smaller #7 \vspace{5pt}}} % Responsibilities
+    \ifblank{#8}{}{\textbf{\small Key Achievements: -}{\small\smaller #8}} % Key Achievements
     \end{flushleft}
   }
 }
@@ -448,8 +450,8 @@
 
 \usepackage{smartdiagram}
 \smartdiagramset{
-    bubble center node font = \footnotesize,
-    bubble node font = \footnotesize,
+    bubble center node font = \small\smaller,
+    bubble node font = \small\smaller,
     % specifies the minimum size of the bubble center node
     bubble center node size = 0.5cm,
     %  specifies the minimum size of the bubbles
