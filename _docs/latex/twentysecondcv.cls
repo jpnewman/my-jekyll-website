@@ -19,7 +19,7 @@
 \usepackage{fontawesome}
 \defaultfontfeatures{Ligatures={NoCommon, NoDiscretionary, NoHistoric, NoRequired, NoContextual}}
 
-\usepackage{xltxtra}
+% \usepackage{xltxtra}
 
 \usepackage{graphicx}
 
@@ -33,6 +33,9 @@
 \RequirePackage{pgffor}
 \RequirePackage{marvosym}
 \RequirePackage{parskip}
+
+\usepackage{amssymb}
+\usepackage{transparent}
 
 \usepackage{enumitem}
 \setlist[itemize]{leftmargin=*, itemsep=1pt, topsep=5pt}
@@ -76,8 +79,6 @@
 \definecolor{mainblue}{HTML}{86A9C1}
 \definecolor{maingray}{HTML}{B9B9B9}
 
-\definecolor{pblue}{HTML}{0395DE}
-
 \definecolor{darkgray}{HTML}{333333}
 \definecolor{gray}{HTML}{4D4D4D}
 \definecolor{lightgray}{HTML}{999999}
@@ -100,6 +101,7 @@
 \definecolor{materialorange}{HTML}{FF5722}
 \definecolor{linkedin}{HTML}{0085AE}
 \definecolor{site}{HTML}{0077be}
+\definecolor{email}{HTML}{0077be}
 \definecolor{yt}{HTML}{c71610}
 \definecolor{github}{HTML}{171515}
 
@@ -145,7 +147,12 @@
 \pgfmathsetlength{\imagewidth}{5cm}
 \pgfmathsetlength{\imagescale}{\imagewidth/600}
 
-\newcommand{\profilesection}[2]{\vspace{8pt}{\color{black!80} \huge #1 \rule[0.15\baselineskip]{#2}{1pt}}}
+\newcommand{\profilesection}[2]{
+  \vspace{8pt}{
+    \includegraphics[scale=0.14]{dot.pdf}
+    \color{black!80} \huge #1 \rule[0.15\baselineskip]{#2}{1pt}
+  }
+}
 
 % Define custom commands for CV info
 \newcommand{\cvdate}[1]{\renewcommand{\cvdate}{#1}}
@@ -157,8 +164,10 @@
 \newcommand{\cvsite}[1]{\renewcommand{\cvsite}{#1}}
 \newcommand{\aboutme}[1]{\renewcommand{\aboutme}{#1}}
 \newcommand{\profilepic}[1]{\renewcommand{\profilepic}{#1}}
-\newcommand{\cvname}[1]{\renewcommand{\cvname}{#1}}
+% \newcommand{\cvname}[1]{\renewcommand{\cvname}{#1}}
 \newcommand{\cvjobtitle}[1]{\renewcommand{\cvjobtitle}{#1}}
+
+\newcommand{\cvhiddendetails}[1]{{\tiny\color{white}\scalebox{.1}{#1}}}
 
 % Command for printing the contact information icons
 \newcommand*\icon[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=1pt, fill=mainblue,mainblue,text=white] (char) {#1};}}
@@ -170,8 +179,7 @@
 
 \newcommand\skillitems[1]{
     \foreach [count=\i] \x in {#1}{
-      \small\smaller{\x}
-      \vspace{2pt} \\
+      \small\smaller{\x} \\
     }
 }
 
@@ -244,10 +252,11 @@
 
     %------------------------------------------------
 
-    \vspace{4mm}
-    {\Huge\color{pblue}\cvname}
+    % \vspace{4mm}
+    % {\Huge\color{pblue}\cvname}
+    % \vspace{2mm}
 
-    \vspace{2mm}
+    \cvtitle
 
     %------------------------------------------------
 
@@ -258,18 +267,10 @@
     \vspace{4mm}
     \renewcommand{\arraystretch}{2}
     \begin{tabular}{p{0.5cm} @{\hskip 0.5cm}p{5cm}}
-      \ifthenelse{\equal{\cvnumberphone}{}}{}{
-          {$
-              \begin{array}{l}
-              \hspace{-0.2mm} \textnormal{\huge\faMobile}
-              \end{array}
-              $}
-            & \cvnumberphone \\
-          }
       \ifthenelse{\equal{\href{\cvsite}{\cvsite}}{}}{}{
             {$
               \begin{array}{l}
-              \hspace{-1.8mm} \textnormal{\huge\textcolor{site}{\faGlobe}}
+              \vphantom{WebSite: }\hspace{-1.8mm} \textnormal{\huge\textcolor{site}{\faGlobe}}
               \end{array}
               $}
             & \href{http://\cvsite}{\cvsite} \\
@@ -277,25 +278,27 @@
       \ifthenelse{\equal{\cvmail}{}}{}{
             {$
               \begin{array}{l}
-              \hspace{-2.5mm} \textnormal{\huge\textcolor{yt}{\faEnvelopeO}}
+              \hspace{-2.5mm} \textnormal{\huge\textcolor{email}{\faEnvelopeO}}
               \end{array}
               $}
-            & \href{mailto:\cvmail}{\cvmail} \\
+            & \cvmail \\
           }
-       \ifthenelse{\equal{\cvlinkedin}{}}{}{
+      \ifthenelse{\equal{\cvlinkedin}{}}{}{
             {$
               \begin{array}{l}
               \hspace{-1.6mm} \textnormal{\huge\textcolor{linkedin}{\faLinkedin}}
               \end{array}
-              $} & \href{https://www.linkedin.com/in/\cvlinkedin}{\cvlinkedin} \\
-            }
-        \ifthenelse{\equal{\cvgithub}{}}{}{
+              $}
+            & \href{https://www.linkedin.com/in/\cvlinkedin}{\cvlinkedin} \\
+          }
+      \ifthenelse{\equal{\cvgithub}{}}{}{
             {$
               \begin{array}{l}
               \hspace{-1.5mm} \textnormal{\huge\textcolor{github}\faGithub}
               \end{array}
-              $} & \href{https://www.github.com/\cvgithub}{\cvgithub} \\
-            }
+              $}
+            & \href{https://www.github.com/\cvgithub}{\cvgithub} \\
+          }
     \end{tabular}
 
     %------------------------------------------------
@@ -331,10 +334,12 @@
 
   \begin{textblock}{6}(0.5, 0.2)
 
-    \vspace{4mm}
-    {\Huge\color{pblue}\cvname}
+    % \vspace{4mm}
+    % {\Huge\color{pblue}\cvname}
+    % \vspace{2mm}
 
-    \vspace{2mm}
+    \cvtitle
+
     {\large\color{black!80}\cvjobtitle}
 
     \profilesection{Projects}{21mm}
@@ -358,27 +363,26 @@
 %   \tikz[baseline=(char.base)]\node[anchor=north west, draw,rectangle, rounded corners, inner sep=1.6pt, minimum size=5.5mm, text height=3.6mm, fill=#2,#2,text=white](char){#1};%
 % }
 
-\def\@sectioncolor#1#2#3{%
-  {%
-    \color{pblue} #1#2#3%
-  }%
-}
+\def\@sectioncolor#1#2#3{{\color{pblue}#1#2#3}}
 
 
 \renewcommand{\section}[1]{
   \par\vspace{\parskip}
-  {%
-    \LARGE\headingfont\color{headercolor}%
-    #1%
+  {
+    \includegraphics[scale=0.14]{dot.pdf}
+    \LARGE\textbf{\color{headercolor}{#1}}
+    \includegraphics[scale=0.14]{dot.pdf}
   }
   \vspace{-12pt}
 }
 
 \renewcommand{\subsection}[1]{
-  \par\vspace{.5\parskip}{%
-    \small\headingfont\color{headercolor} #1%
+  \par\vspace{.5\parskip}{
+    \includegraphics[scale=0.14]{dot.pdf}
+    \small\textbf{\color{headercolor}{#1}}
+    \includegraphics[scale=0.14]{dot.pdf}
   }
-  \par\vspace{.25\parskip}%
+  \par\vspace{.25\parskip}
 }
 
 \pagestyle{empty}
@@ -387,10 +391,10 @@
 %   Summary
 %----------------------------------------------------------------------------------------
 
-\newcommand{\summary}[1]{%
-  \parbox[t]{0.98\textwidth}{%
+\newcommand{\summary}[1]{
+  \parbox[t]{0.98\textwidth}{
     \begin{flushleft}
-    \ifblank{#1}{}\small{#1} \\%
+    \ifblank{#1}{}\small{#1} \\
     \end{flushleft}
   }
 }
@@ -408,17 +412,18 @@
   \end{tabular*}
 }
 
-%\twentyitem{<date>}{<title>}{<icon pdf file>}{<company>}{<location>}{<description>}{<responsibilities>}{<key achievements>}
-\newcommand{\twentyitem}[8]{%
-  \parbox[t]{0.98\textwidth}{%
+%\twentyitem{<1:date>}{<2:title>}{<3:company>}{4:acquired_by}{<5:location>}{<6:description>}{<7:responsibilities>}{<8:achievements>}
+\newcommand{\twentyitem}[8]{
+  \parbox[t]{0.98\textwidth}{
     \begin{flushleft}
-    \textbf{\large #2} \hfill \ifblank{#3}{}{\includegraphics[scale=0.32]{#3}} \\ %vTitle Icons
+    \textbf{\large #2} \hfill {\small #1} \\ % Title, (DateFrom - DateTo)
     \noindent
-    {\textbf{\normalsize #4} {\small #1}} \hfill \ifblank{#5}{}{\textbf{\normalsize #5}} \\ % Company (DateFrom - DateTo) Location
-    \vspace{5pt}\ifblank{#6}{}{\small #6 \vspace{5pt} \\} % Description
-    \ifblank{#7}{}{\textbf{\small Responsibilities: -}{\small\smaller #7 \vspace{5pt}}} % Responsibilities
-    \ifblank{#8}{}{\textbf{\small Key Achievements: -}{\small\smaller #8}} % Key Achievements
+    \textbf{\normalsize #3} \ifblank{#4}{}{\small #4} \hfill \ifblank{#5}{}{\small #5} \\ % Company, Location
+    \vspace{2pt}\ifblank{#6}{}{\small #6 \vspace{2pt} \\} % Description
+    \ifblank{#7}{}{\includegraphics[scale=0.14]{dot.pdf}\textbf{\small Responsibilities: -}{\small\smaller #7 \vspace{2pt}}} % Responsibilities
+    \ifblank{#8}{}{\includegraphics[scale=0.14]{dot.pdf}\textbf{\small Key Achievements: -}{\small\smaller #8}} % Achievements
     \end{flushleft}
+    \includegraphics[scale=0.14]{dot.pdf}
   }
 }
 
@@ -429,17 +434,13 @@
 \setlength{\tabcolsep}{0pt}
 
 % New environment for the small list
-\newenvironment{twentyshort}{%
+\newenvironment{twentyshort}{
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}
-}{%
+}{
   \end{tabular*}
 }
 
-\newcommand{\twentyitemshort}[2]{%
-  #1&\parbox[t]{0.98\textwidth}{%
-    #2%
-  }
-}
+\newcommand{\twentyitemshort}[2]{#1&\parbox[t]{0.98\textwidth}{#2}}
 
 %----------------------------------------------------------------------------------------
 %   MARGINS AND LINKS

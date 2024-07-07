@@ -13,7 +13,8 @@ group :jekyll_plugins do
   gem 'jekyll-minimagick'
 end
 
-gem 'listen', '~> 3.1', '>= 3.1.1'
+# gem 'yajl-ruby', require: 'yajl'
+# gem 'listen'
 gem 'nokogiri'
 gem 'pygments.rb'
 gem 'rchardet'

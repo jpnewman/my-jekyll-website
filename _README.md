@@ -21,8 +21,6 @@ bundle config build.nokogiri \
 
 
 brew install ImageMagick
-
-bundle install --path _vendor/bundle
 ```
 
 ## Set RVM
@@ -44,7 +42,7 @@ curl -sSL https://get.rvm.io | bash -s stable --ruby
 ```
 
 ```bash
-rvm install 2.5.1
+rvm install 3.1.2
 ```
 
 > Restart the shell.
@@ -52,7 +50,13 @@ rvm install 2.5.1
 ## Set Environment
 
 ```bash
-rvm use ruby-2.5.1
+rvm use ruby-3.1.2
+```
+
+## Bundle Install
+
+```bash
+bundle install
 ```
 
 ## Generate CV PDF

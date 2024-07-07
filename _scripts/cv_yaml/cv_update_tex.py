@@ -79,9 +79,24 @@ def write_tex_projects(out_file, projects):
                                    {"HREF": p['href'],
                                     "TITLE": escape_tex(p['title']),})
 
-        text += "\\begin{itemize}\n"
-        for i in p['items']:
-            text += "  \\item {0}\n".format(escape_tex(i))
+        items_count = len(p['items']) - 1
+
+        text += "\\begin{itemize}[noitemsep,topsep=-10pt]\n"
+        for idx, i in enumerate(p['items']):
+            text += "  \\item {0}".format(escape_tex(i['item']))
+
+            if idx == items_count:
+                text += " \\\\\n"
+            else:
+                text += "\n"
+
+            if 'subitems' in i and len(i['subitems']) > 0:
+                text += "  \\begin{itemize}[noitemsep,topsep=-10pt]\n"
+                for s in i['subitems']:
+                    text += "    \\item[-] {0}\n".format(escape_tex(s))
+                text += "  \\end{itemize}\n"
+
+        text += "\\includegraphics[scale=0.14]{dot.pdf}"
         text += "\\end{itemize}\n"
 
     text += "}\n"
@@ -98,7 +113,6 @@ def write_tex_qualifications(out_file, qualifications):
         text += apply_tex_template("\\textbf{$NAME}\\\\\\textnormal{$DESC\\vspace{1.25mm}} \\\\\n",
                                    {"NAME": escape_tex(q['name']),
                                     "DESC": escape_tex(q['desc'])})
-
     text += "}\n"
 
     with open(out_file, 'w') as o:
@@ -123,10 +137,19 @@ def get_experience_items_tex(items):
     for i in items:
          text += f"    \\item {escape_tex(i)}\n"
 
-    text += "  \\end{itemize}\n"
-    text += "  }\n"
+    text += "  \\end{itemize}}\n"
 
     return text
+
+
+def format_company(company):
+    text = ""
+    if test_element(company, 'href'):
+        text += f"{{\\href{{{company['href']}}}{{{company['company']}}}}}"
+    else:
+        text += company['company']
+
+    return text.strip()
 
 
 def get_experience_tex(experience):
@@ -134,29 +157,38 @@ def get_experience_tex(experience):
 
     text = "\\begin{twenty}\n"
     text += "\\twentyitem\n"
-    text += f"  {{{e['start_date']}}}\n"
-    text += f"  {{{e['end_date']}}}\n"
+
+    if 'duration' in e['include']:
+        text += f"  {{({e['start_date']} - {e['end_date']}) {e['duration']}}}\n"
+    else:
+        text += f"  {{{e['start_date']} - {e['end_date']}}}\n"
+
     text += f"  {{{e['title']}}}\n"
 
-    if test_element(e, 'href'):
-        text += f"  {{\\href{{{e['href']}}}{{{e['company']}}}}}\n"
+    company = format_company(e)
+    text += f"  {{{company}}}\n"
+
+    if test_element(e, 'acquired_by'):
+        acquired_by = format_company(e['acquired_by'])
+        text += f"  {{(acquired by {acquired_by})}}\n"
     else:
-        text += f"  {{{e['company']}}}\n"
+        text += "  {}\n"
 
     text += f"  {{{e['location']}}}\n"
 
     text += get_experience_item_or_default(e, 'summary')
 
-    if test_element(e, 'responsibilities'):
+    if test_element(e, 'responsibilities') and 'responsibilities' in e['include']:
         text += get_experience_items_tex(e['responsibilities'])
     else:
         text += "  {}\n"
 
-    text += get_experience_items_tex(e['achievements'])
+    if 'achievements' in e['include']:
+        text += get_experience_items_tex(e['achievements'])
+    else:
+        text += "  {}\n"
 
     text += "\\end{twenty}\n"
-
-    text += "\n\\vspace{0.25\\baselineskip}\n"
 
     return text
 
@@ -171,10 +203,9 @@ def write_experience(out_file, experience):
         o.write(TEX_HEADER)
         o.write(text)
 
-
 def write_experience_files(out_dir, experience):
-    write_experience(os.path.join(out_dir, "experience_01.tex"), [experience[0]])
-    write_experience(os.path.join(out_dir, "experience_02.tex"), experience[1:])
+    write_experience(os.path.join(out_dir, "experience_01.tex"), experience[0:2])
+    write_experience(os.path.join(out_dir, "experience_02.tex"), experience[2:])
 
 
 def write_tex_skills(out_file, skills):
@@ -183,16 +214,16 @@ def write_tex_skills(out_file, skills):
     for s in skills:
         text += f"\\{s['id']}{{"
         groups = []
-        for g in reversed(s['groups']):
-            groups_text = f"{{"
+        for g in s['groups']:
+            groups_text = "{{"
             escape_group_text = [escape_tex(i) for i in g['items']]
             groups_text += " $\\textbullet$ ".join(escape_group_text).strip()
-            groups_text += f" / {g['level']}}}"
+            groups_text += "}}"
 
             groups.append(groups_text)
 
         text += ", ".join(groups)
-        text += f"}}\n\n"
+        text += f"}}\n"
 
     with open(out_file, 'w') as o:
         o.write(TEX_HEADER)
@@ -226,9 +257,12 @@ def main():
 
         write_tex_from_template(os.path.join(args.templateDir, 'contacts.tex'),
                                 os.path.join(args.outDir, 'contacts.tex'),
-                                {"CONTACT_LINKEDIN": data['cv']['contacts']['linkedin'],
-                                 "CONTACT_GITHUB": data['cv']['contacts']['github'],
-                                 "CONTACT_WEBSITE": data['cv']['contacts']['website']['domain']})
+                                {
+                                    "CONTACT_LINKEDIN": data['cv']['contacts']['linkedin'],
+                                    "CONTACT_GITHUB": data['cv']['contacts']['github'],
+                                    "CONTACT_WEBSITE": data['cv']['contacts']['website']['domain'],
+                                    "CONTACT_EMAIL": f"{{\\href{{mailto:{data['cv']['contacts']['email']['address']}}}{{{data['cv']['contacts']['email']['text']}}}}}"
+                                })
 
         write_tex_from_template(os.path.join(args.templateDir, 'summary.tex'),
                                 os.path.join(args.outDir, 'summary.tex'),

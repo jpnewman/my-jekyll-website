@@ -23,6 +23,8 @@ Based On: <https://logosbynick.com/inkscape-infographic-template/>
 ```bash
 /Applications/Inkscape.app/Contents/MacOS/inkscape $(PWD)/DevOps.svg --export-filename=$(PWD)/../latex/DevOps.pdf --export-type="pdf" --export-text-to-path --export-dpi 300
 
+/Applications/Inkscape.app/Contents/MacOS/inkscape $(PWD)/WorkExperience_Divido.svg --export-filename=$(PWD)/../latex/WorkExperience_Divido.pdf --export-type="pdf" --export-text-to-path --export-dpi 300
+
 /Applications/Inkscape.app/Contents/MacOS/inkscape $(PWD)/WorkExperience_RateSetter.svg --export-filename=$(PWD)/../latex/WorkExperience_RateSetter.pdf --export-type="pdf" --export-text-to-path --export-dpi 300
 
 /Applications/Inkscape.app/Contents/MacOS/inkscape $(PWD)/WorkExperience_Wonga.svg --export-filename=$(PWD)/../latex/WorkExperience_Wonga.pdf --export-type="pdf" --export-text-to-path --export-dpi 300

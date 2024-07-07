@@ -1,7 +1,7 @@
 
 convert_app = convert
-inkscape_app = /Applications/Inkscape.app/Contents/Resources/bin/inkscape
-xelatex_app = xelatex
+inkscape_app = /Applications/Inkscape.app/Contents/MacOS/inkscape
+latex_app = lualatex
 pdftohtml_app = pdftohtml
 clean_cv_html_script = ./_scripts/clean_cv_html/clean_cv_html.py
 cv_update_tex_script = ./_scripts/cv_yaml/cv_update_tex.py
@@ -30,6 +30,8 @@ gen_favicon:
 	$(convert_app) -density 384 -background transparent $(PWD)/_docs/favicon/favicon.svg -define icon:auto-resize $(PWD)/favicon.ico
 
 convert_svg:
+	$(inkscape_app) -D -z --file=$(PWD)/_docs/inkscape/Title.svg --export-pdf=$(PWD)/_docs/latex/Title.pdf --export-text-to-path --export-dpi 300
+
 	# $(inkscape_app) -D -z --file=$(PWD)/_docs/inkscape/DevOps.svg --export-png=$(PWD)/_docs/latex/DevOps.png
 	$(inkscape_app) -D -z --file=$(PWD)/_docs/inkscape/DevOps.svg --export-pdf=$(PWD)/_docs/latex/DevOps.pdf --export-text-to-path --export-dpi 300
 
@@ -41,13 +43,13 @@ cv_update_markdown:
 
 gen_docs: convert_svg cv_update_tex cv_update_markdown
 	cd ./_docs/latex/; \
-	$(xelatex_app) johnpaul_newman_cv.tex; \
+	$(latex_app) johnpaul_newman_cv.tex; \
 	cp johnpaul_newman_cv.pdf $(PWD)/johnpaul_newman_cv.pdf
 
 gen_html_from_pdf: gen_docs
 	mkdir -p ./_cv; \
 	cd ./_cv/; \
-	$(pdftohtml_app) -s -i -noframes $(PWD)/johnpaul_newman_cv.pdf
+	$(pdftohtml_app) -s -i -noframes $(PWD)/johnpaul_newman_cv.pdf $(PWD)
 	$(clean_cv_html_script) --file johnpaul_newman_cv.html --outfile cv.html
 
 gen_xml_from_pdf: gen_docs

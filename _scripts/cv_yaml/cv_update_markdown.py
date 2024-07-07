@@ -45,7 +45,7 @@ def gen_item_section(element, header, name):
     text = ""
 
     if test_element(element, name):
-        text += f"\n#### {header}: -\n"
+        text += f"\n**{header}: -**\n\n"
         for r in element[name]:
             text += f"- {r}\n"
 
@@ -53,7 +53,7 @@ def gen_item_section(element, header, name):
 
 
 def gen_experience_markdown(experience):
-    text = "\n\n# Work Experience\n"
+    text = "\n\n## Work Experience\n"
 
     for e in experience:
         text += f"\n## {e['title']}\n"
@@ -69,7 +69,7 @@ def gen_experience_markdown(experience):
 
 
 def gen_qualifications_markdown(qualifications):
-    text = "\n\n# Qualifications\n\n"
+    text = "\n\n## Qualifications\n\n"
 
     for q in qualifications:
         text += f"### {q['name']}\n\n"
