@@ -96,7 +96,6 @@ def write_tex_projects(out_file, projects):
                     text += "    \\item[-] {0}\n".format(escape_tex(s))
                 text += "  \\end{itemize}\n"
 
-        text += "\\includegraphics[scale=0.14]{dot.pdf}"
         text += "\\end{itemize}\n"
 
     text += "}\n"
@@ -110,6 +109,9 @@ def write_tex_qualifications(out_file, qualifications):
     text = "\\qualifications{\n"
 
     for q in qualifications:
+        if q.get('include', True) == False:
+            continue
+
         text += apply_tex_template("\\textbf{$NAME}\\\\\\textnormal{$DESC\\vspace{1.25mm}} \\\\\n",
                                    {"NAME": escape_tex(q['name']),
                                     "DESC": escape_tex(q['desc'])})

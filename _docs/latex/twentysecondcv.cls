@@ -149,7 +149,6 @@
 
 \newcommand{\profilesection}[2]{
   \vspace{8pt}{
-    \includegraphics[scale=0.14]{dot.pdf}
     \color{black!80} \huge #1 \rule[0.15\baselineskip]{#2}{1pt}
   }
 }
@@ -369,18 +368,14 @@
 \renewcommand{\section}[1]{
   \par\vspace{\parskip}
   {
-    \includegraphics[scale=0.14]{dot.pdf}
     \LARGE\textbf{\color{headercolor}{#1}}
-    \includegraphics[scale=0.14]{dot.pdf}
   }
   \vspace{-12pt}
 }
 
 \renewcommand{\subsection}[1]{
   \par\vspace{.5\parskip}{
-    \includegraphics[scale=0.14]{dot.pdf}
     \small\textbf{\color{headercolor}{#1}}
-    \includegraphics[scale=0.14]{dot.pdf}
   }
   \par\vspace{.25\parskip}
 }
@@ -420,10 +415,9 @@
     \noindent
     \textbf{\normalsize #3} \ifblank{#4}{}{\small #4} \hfill \ifblank{#5}{}{\small #5} \\ % Company, Location
     \vspace{2pt}\ifblank{#6}{}{\small #6 \vspace{2pt} \\} % Description
-    \ifblank{#7}{}{\includegraphics[scale=0.14]{dot.pdf}\textbf{\small Responsibilities: -}{\small\smaller #7 \vspace{2pt}}} % Responsibilities
-    \ifblank{#8}{}{\includegraphics[scale=0.14]{dot.pdf}\textbf{\small Key Achievements: -}{\small\smaller #8}} % Achievements
+    \ifblank{#7}{}{\textbf{\small Responsibilities: -}{\small\smaller #7 \vspace{2pt}}} % Responsibilities
+    \ifblank{#8}{}{\textbf{\small Key Achievements: -}{\small\smaller #8}} % Achievements
     \end{flushleft}
-    \includegraphics[scale=0.14]{dot.pdf}
   }
 }
 

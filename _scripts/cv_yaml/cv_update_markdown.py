@@ -72,6 +72,9 @@ def gen_qualifications_markdown(qualifications):
     text = "\n\n## Qualifications\n\n"
 
     for q in qualifications:
+        if q.get('include', True) == False:
+            continue
+
         text += f"### {q['name']}\n\n"
         text += "- {0}\n\n".format(q['desc'].replace('\n', ' '))
 
