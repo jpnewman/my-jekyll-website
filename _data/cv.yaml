@@ -202,13 +202,24 @@ cv:
             XSLT with Javascript functions
   qualifications:
     - name: Certificate in C++ Programming
+      start_date: 1998
+      end_date: 1998
       desc: Open University (MT262 Module)
     - name: Certificate in Programming
+      start_date: 1996
+      end_date: 1996
       desc: |
         Cambridge Information Technology
         (Pascal & Delphi)
     - name: BTEC 1st Diploma in Science & Health
+      start_date: 1994
+      end_date: 1995
       desc: 12 Distinctions and 4 Merits
+    - name: William Penn Secondary School
+      include: false
+      start_date: 1989
+      end_date: 1994
+      desc: GCSE's, Junior Certificate
   summary: |
     Senior/Lead Software Engineer with Windows and Linux DevOps experience working in an Agile environment for FinTech ISO 9001 and PCI-DSS compliant businesses.
     Experienced in infrastructure automation, using Terraform, Packer, Ansible, and Chef.
