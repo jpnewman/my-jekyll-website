@@ -202,28 +202,31 @@ cv:
             XSLT with Javascript functions
   qualifications:
     - name: Certificate in C++ Programming
+      location: London
       start_date: 1998
       end_date: 1998
       desc: Open University (MT262 Module)
     - name: Certificate in Programming
+      location: London
       start_date: 1996
       end_date: 1996
       desc: |
         Cambridge Information Technology
         (Pascal & Delphi)
     - name: BTEC 1st Diploma in Science & Health
+      location: Southwark College
       start_date: 1994
       end_date: 1995
       desc: 12 Distinctions and 4 Merits
     - name: William Penn Secondary School
+      location: Dulwich
       include: false
       start_date: 1989
       end_date: 1994
       desc: GCSE's, Junior Certificate
   summary: |
-    Senior/Lead Software Engineer with Windows and Linux DevOps experience working in an Agile environment for FinTech ISO 9001 and PCI-DSS compliant businesses.
-    Experienced in infrastructure automation, using Terraform, Packer, Ansible, and Chef.
-    Experienced with Amazon Web Services (AWS), Azure, and VMware.
+    Senior/Lead Software Engineer with Linux and Windows DevOps experience working in an Agile environment for FinTech ISO 27001 and PCI-DSS compliant businesses.
+    Experienced in infrastructure automation, using Terraform, Packer, Ansible, and Chef, on Amazon Web Services (AWS), Azure, and VMware.
     Implemented High Availability (HA) and Disaster Recovery (DR) best practices.
     Designed and managed Continuous Integration (CI)/Continuous Deployment (CD) tools, processes, and pipelines.
   experience:
@@ -238,30 +241,25 @@ cv:
       summary: |
         FinTech - Software as a Service (SaaS) Buy Now, Pay Later (BNPL) platform, providing lenders and merchants connectivity.
       responsibilities:
-        - Manage a team of two Senior Site Reliability Engineers (SRE) and one Senior Data Engineer
-        - Support the AWS infrastructure and CI/CD pipelines in a DevOps capacity
+        - Manage a team of Senior Site Reliability Engineers (SRE) and Senior Data Engineers
         - Support the Platform in SRE/on-call capacity
-        - Support, patch, and maintain Divido AWS infrastructure, consisting of Amazon Elastic Kubernetes Service (EKS), Amazon Relational Database Service (RDS), Amazon Managed Streaming for Apache Kafka (MSK)
+        - Support, patch, and maintain AWS infrastructure, in a DevOps capacity, consisting of Amazon Elastic Kubernetes Service (EKS), Amazon Relational Database Service (RDS), Amazon Managed Streaming for Apache Kafka (MSK)
         - Modernize Divido's tech stack and infrastructure
-        - Support ISO9001 efforts and Due Diligence
+        - Support ISO 27001 efforts and Due Diligence request
       achievements:
-        - Managed a team of Senior SRE and Data Engineers
-        - Refactored HashiCorp Terraform to reduce change blast radius and allow development of multiple aspects for the infrastructure simultaneously
-        - Implemented High Availability (HA) and Disaster Recovery (DR) best practices
+        - Refactored HashiCorp Terraform to reduce change blast radius and allow development of multiple aspects of the infrastructure simultaneously
         - Created Terraform HTML Plan and Access Reports
-        - Migrated from Continuous Delivery (CD) process from GitLab to GitHub Actions
         - Developed Bash scripts to manage and diagnose issues with Debezium Change Data Capture (CDC) pipelines
-        - Designed and implemented Atomic Repositories, where microservices contain all items needed to be independently deployed
+        - Migrated from GitLab to GitHub Actions for Continuous Delivery (CD)
         - Designed a Hub and Spoke network topology to simplify VPNs and Access Controls
+        - Right sized and review the use of AWS infrastructure leading to significant cost savings
         - Developed Platform support tools using GoLang
         - Created multiple Jupyter Notebooks to graph and analyze incidents
-        - Created NodeJS AWS Lambda HTML to PDF rendering function using Chromium, Puppeteer, and ExifTool
         - Created Training Videos for developers, 3rd parties and on-boarding new members
         - Managed the migration from Chartmuseum to Harbor
         - Managed the move from DataDog metrics to Prometheus and Grafana
-        - Implemented the use for tools like Telepresence for debug and Istio Service Mash plugin Kiali for visualizing internal service communication
         - Implemented SFTP, with PGP decryption, using AWS Transfer Family
-        - AWS Cost Savings
+
     - title: Senior DevOps Engineer
       include: ["responsibilities", "achievements"]
       company: RateSetter

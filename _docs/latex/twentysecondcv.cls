@@ -10,7 +10,22 @@
 %----------------------------------------------------------------------------------------
 
 \RequirePackage[quiet]{fontspec}
-\RequirePackage[sfdefault]{ClearSans}
+
+\usepackage[T1]{fontenc}
+
+% \setmainfont{Times New Roman}
+
+% \RequirePackage[sfdefault]{ClearSans}
+\usepackage[sfdefault,medium]{ClearSans}
+
+% \usepackage[default]{opensans}
+
+% \RequirePackage[default]{carlito}
+
+% \newfontfamily\Cambria{Cambria}[Scale=MatchLowercase,
+%                                 Ligatures=TeX]
+\newfontfamily\Verdana{Verdana}[Scale=MatchLowercase,
+                                Ligatures=TeX]
 
 \def\arrow#1{\pspicture[shift=2pt](#1,0)\psline{->}(#1,0)\endpspicture}
 
@@ -171,6 +186,12 @@
 % Command for printing the contact information icons
 \newcommand*\icon[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=1pt, fill=mainblue,mainblue,text=white] (char) {#1};}}
 
+% textbf
+
+% \renewcommand{\textbf}[1]{\#1}
+% \renewcommand{\textbf}[1]{{\bfseries\sffamily#1}}
+% \renewcommand{\textbf}[1]{{\begin{bfseries}#1\end{bfseries}}}
+
 % Command for printing skill progress bars
 \newcommand\skillbullet{
   $\bullet$\
@@ -178,7 +199,7 @@
 
 \newcommand\skillitems[1]{
     \foreach [count=\i] \x in {#1}{
-      \small\smaller{\x} \\
+      {\x} \\
     }
 }
 
@@ -226,13 +247,13 @@
 
 \newcommand\projects[1]{
   \renewcommand{\projects}{
-    \small\smaller{#1}
+    {#1}
   }
 }
 
 \newcommand\qualifications[1]{
   \renewcommand{\qualifications}{
-    \small\smaller{#1}
+    {#1}
   }
 }
 
@@ -242,7 +263,7 @@
 
 \newcommand{\makeprofile}{
   \begin{tikzpicture}[remember picture,overlay]
-    \small\smaller\node [rectangle, fill=sidecolor, anchor=north, minimum width=9cm, minimum height=\paperheight+1cm] (box) at (-5cm,0.5cm){};
+    \node [rectangle, fill=sidecolor, anchor=north, minimum width=6cm, minimum height=\paperheight+1cm] (box) at (-3.5cm,0.5cm){};
   \end{tikzpicture}
 
   %------------------------------------------------
@@ -308,19 +329,19 @@
 
     %------------------------------------------------
 
-    {\small \textbf{Programming Languages}} \\
+    { \textbf{Programming Languages}} \\
     \programming \\
-    {\small \textbf{Infrastructure as Code (IaC)}} \\
+    { \textbf{Infrastructure as Code (IaC)}} \\
     \iac \\
-    {\small \textbf{Operating Systems}} \\
+    { \textbf{Operating Systems}} \\
     \oses \\
-    {\small \textbf{Platforms}} \\
+    { \textbf{Platforms}} \\
     \platforms \\
-    {\small \textbf{CI/CD}} \\
+    { \textbf{CI/CD}} \\
     \cicd \\
-    {\small \textbf{Monitoring}} \\
+    { \textbf{Monitoring}} \\
     \monitoring \\
-    {\small \textbf{Alerting}} \\
+    { \textbf{Alerting}} \\
     \alerting
 
   \end{textblock}
@@ -328,7 +349,7 @@
 
 \newcommand{\makeprofiletwo}{
   \begin{tikzpicture}[remember picture,overlay]
-    \small\smaller\node [rectangle, fill=sidecolor, anchor=north, minimum width=9cm, minimum height=\paperheight+1cm] (box) at (-5cm,0.5cm){};
+    \node [rectangle, fill=sidecolor, anchor=north, minimum width=6cm, minimum height=\paperheight+1cm] (box) at (-3.5cm,0.5cm){};
   \end{tikzpicture}
 
   \begin{textblock}{6}(0.5, 0.2)
@@ -364,6 +385,21 @@
 
 \def\@sectioncolor#1#2#3{{\color{pblue}#1#2#3}}
 
+\newcommand{\sectionfirst}[1]{
+  \vspace{-20pt}
+  {
+    \LARGE\textbf{\color{headercolor}{#1}}
+  }
+  \vspace{-12pt}
+}
+
+\newcommand{\sectionsecond}[1]{
+  \vspace{-4pt}
+  {
+    \LARGE\textbf{\color{headercolor}{#1}}
+  }
+  \vspace{-12pt}
+}
 
 \renewcommand{\section}[1]{
   \par\vspace{\parskip}
@@ -375,7 +411,7 @@
 
 \renewcommand{\subsection}[1]{
   \par\vspace{.5\parskip}{
-    \small\textbf{\color{headercolor}{#1}}
+    \textbf{\color{headercolor}{#1}}
   }
   \par\vspace{.25\parskip}
 }
@@ -389,7 +425,7 @@
 \newcommand{\summary}[1]{
   \parbox[t]{0.98\textwidth}{
     \begin{flushleft}
-    \ifblank{#1}{}\small{#1} \\
+    \ifblank{#1}{}{#1} \\
     \end{flushleft}
   }
 }
@@ -411,12 +447,12 @@
 \newcommand{\twentyitem}[8]{
   \parbox[t]{0.98\textwidth}{
     \begin{flushleft}
-    \textbf{\large #2} \hfill {\small #1} \\ % Title, (DateFrom - DateTo)
+    \textbf{\large #2} \hfill { #1} \\ % Title, (DateFrom - DateTo)
     \noindent
-    \textbf{\normalsize #3} \ifblank{#4}{}{\small #4} \hfill \ifblank{#5}{}{\small #5} \\ % Company, Location
-    \vspace{2pt}\ifblank{#6}{}{\small #6 \vspace{2pt} \\} % Description
-    \ifblank{#7}{}{\textbf{\small Responsibilities: -}{\small\smaller #7 \vspace{2pt}}} % Responsibilities
-    \ifblank{#8}{}{\textbf{\small Key Achievements: -}{\small\smaller #8}} % Achievements
+    \textbf{\normalsize #3} \ifblank{#4}{}{ #4} \hfill \ifblank{#5}{}{ #5} \\ % Company, Location
+    \vspace{2pt}\ifblank{#6}{}{ #6 \vspace{2pt} \\} % Description
+    \ifblank{#7}{}{\textbf{ Responsibilities: -}{ #7 \vspace{2pt}}} % Responsibilities
+    \ifblank{#8}{}{\textbf{ Key Achievements: -}{ #8}} % Achievements
     \end{flushleft}
   }
 }
@@ -445,8 +481,8 @@
 
 \usepackage{smartdiagram}
 \smartdiagramset{
-    bubble center node font = \small\smaller,
-    bubble node font = \small\smaller,
+    bubble center node font = ,
+    bubble node font = ,
     % specifies the minimum size of the bubble center node
     bubble center node size = 0.5cm,
     %  specifies the minimum size of the bubbles

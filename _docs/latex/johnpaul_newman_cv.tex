@@ -1,4 +1,4 @@
-% !TEX TS-program = xelatex
+% !TEX TS-program = lualatex
 % !TEX spellcheck = en-UK
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -15,7 +15,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% XeLaTex
+% LuaLaTeX
 
 %----------------------------------------------------------------------------------------
 %  PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
@@ -25,6 +25,14 @@
 
 % \input{glyphtounicode}
 % \pdfgentounicode=1
+
+%%% No Compression
+
+% \RequirePackage{expl3}
+% \ExplSyntaxOn
+% \pdf_uncompress:
+% \pdf_version_gset:n{1.7}
+% \ExplSyntaxOff
 
 \documentclass[a4paper]{twentysecondcv} % a4paper for A4
 
@@ -89,7 +97,7 @@
 %   Summary
 %----------------------------------------------------------------------------------------
 
-\section{Summary}
+\sectionfirst{Summary}
 \input{generated/summary.tex}
 
 %----------------------------------------------------------------------------------------
@@ -102,7 +110,7 @@
 \newpage
 \makeprofiletwo
 
-\section{Work Experience}
+\sectionsecond{Work Experience}
 \input{generated/experience_02.tex}
 
 \end{document}

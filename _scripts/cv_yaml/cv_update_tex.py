@@ -112,7 +112,7 @@ def write_tex_qualifications(out_file, qualifications):
         if q.get('include', True) == False:
             continue
 
-        text += apply_tex_template("\\textbf{$NAME}\\\\\\textnormal{$DESC\\vspace{1.25mm}} \\\\\n",
+        text += apply_tex_template("\\textbf{$NAME}\\\\{$DESC\\vspace{1.25mm}} \\\\\n",
                                    {"NAME": escape_tex(q['name']),
                                     "DESC": escape_tex(q['desc'])})
     text += "}\n"
